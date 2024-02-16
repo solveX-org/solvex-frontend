@@ -1,0 +1,18 @@
+.container{
+    @apply flex justify-between items-center;
+}
+.navigations{
+    @apply flex gap-[3rem] items-center;
+}
+.innerNav{
+    @apply flex gap-[4rem] items-center;
+}
+.nav{
+    @apply py-[1rem];
+}
+.productTag{
+    @apply text-[var(--text-orange-dk)] hover:opacity-70 transition duration-100 font-[600] text-[1.2rem];
+}
+.aboutTag{
+    @apply text-[var(--text-ash-lt)] hover:opacity-70 transition duration-100 font-[500] text-[1.2rem];
+}

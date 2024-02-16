@@ -6,6 +6,13 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  /* text */
+  --text-orange-dk: #E07748;
+  --text-ash-lt: #808080;
+
+  /* components */
+  --dark-border: #808080;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,4 +27,10 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+.width{
+  max-width: 86rem;
+  margin: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
