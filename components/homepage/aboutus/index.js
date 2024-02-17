@@ -1,8 +1,8 @@
-import React from 'react'
+import style from './aboutus.module.css'
 
 function index() {
   return (
-    <div>
+    <div className={`${style.container} width`}>
         About us
     </div>
   )
