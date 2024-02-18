@@ -2,7 +2,7 @@
     @apply py-[4rem]
 }
 .inneContainer{
-    @apply overflow-hidden
+    @apply  relative overflow-hidden
 }
 .productsContainer{
     @apply flex gap-[2rem] mt-[3rem] overflow-x-scroll;
@@ -75,5 +75,26 @@
     @apply w-[80%] text-justify text-[var(--text-black-lt)];
     font-size: 1.1rem;
     font-weight: 400;
-
+}
+.leftbtn{
+ @apply absolute  transition duration-500 -left-6 top-[50%];  
+    padding: 10px;
+    border-radius: 41px;
+    font-size: 30px;
+    font-weight: 500;
+    background-color: var(--orange-background);
+    color: var(--text-white)
+}
+.rightbtn{
+    @apply absolute transition duration-500 bg-red-900 -right-6 top-[50%]; 
+    padding: 10px;
+    border-radius: 41px;
+    font-size: 30px;
+    font-weight: 500;
+    background-color: var(--orange-background);
+    color: var(--text-white)
+}
+.rightbtn:hover, .leftbtn:hover{
+    background-color: var(--light-black-bg);
+    color: var(--text-blue)
 }

@@ -82,6 +82,11 @@
   background-color: var(--white-bg-main);
   color: var(--text-orange);
 }
+.btn2:hover{
+  @apply transition duration-500;
+  background-color: var(--orange-background);
+  color: var(--text-white);
+}
 .title{
   font-family: Poppins;
   font-size: 30px;

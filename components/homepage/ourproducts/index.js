@@ -1,8 +1,15 @@
+'use client'
 import ProductCard from './ProductCard'
 import style from './products.module.css'
+import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIosNew } from "react-icons/md";
+import { useRef, useState } from 'react' 
 //add a carousel slide to this and more importantly a scroll tab showing the length of scroll one has to do
+//the left scroll is still not working
 
 function index() {
+  const ref = useRef(null)
+  const [scrollPoint, setscrollPoint] = useState(0)
 
   const renderProducts = (products)=>{
     if (products?.length > 4) 
@@ -25,16 +32,31 @@ function index() {
       ...[1,2,3].map((data, index)=><ComingSoonCard key={index}/>)]
     
   }
-  console.log()
+
+  const handleScroll =()=>{
+    ref.current.scrollRight = 550*(scrollPoint-1);
+    setscrollPoint(scrollPoint - 1)
+  }
+  const handleScrollforward =()=>{
+    ref.current.scrollLeft = 550*(scrollPoint+1);
+    setscrollPoint(scrollPoint + 1)
+  }
+  
 
   return (
     <div className={`${style.container} width`}>
-        <div className={style.inneContainer}>
-          <h1 className='title'> Our Products</h1>
-          <div className={style.productsContainer}> 
-            {renderProducts(productData)}
+        <div className='relative'>
+          <div className={style.inneContainer}>
+            <h1 className='title'> Our Products</h1>
+            <div className={style.productsContainer} ref={ref}> 
+              {renderProducts(productData)}
+            </div>
           </div>
+          {scrollPoint != 0 && <button className={style.leftbtn} onClick={()=>handleScroll()}><MdArrowBackIosNew/></button>}
+          <button className={style.rightbtn} onClick={()=>handleScrollforward()}><MdArrowForwardIos/></button>
         </div>
+
+        
     </div>
   )
 }
