@@ -8,13 +8,17 @@
   --background-end-rgb: 255, 255, 255; */
   --orange-background: #FE7131;
   --white-bg-main:  #FFFFFF;
+  --move-background: rgba(45, 72, 237, 0.5);
+  --light-black-bg: #EFEFEF;
+
+
 
   /* text */
   --text-orange-dk: #E07748;
   --text-ash-lt: #808080;
   --text-black: #000000;
   --text-orange: #FE7131;
-  --text-white: white;
+  --text-white: #FFFFFF;
   --text-black-9: #1C1C1C;
   --text-blue: #2B43D5;
   --text-black-lt: #3A3A3A;
@@ -28,6 +32,10 @@
 
   /* line */
   --line-dark: #808080;
+
+  /* borders */
+  --blue-border: #2B43D4;
+
 }
 
 @media (prefers-color-scheme: dark) {

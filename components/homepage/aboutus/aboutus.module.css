@@ -62,8 +62,12 @@
 .content{
     @apply text-justify text-[var(--text-black-lt)];
     width: 80%;
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 300;
     line-height: 28px;
     letter-spacing: 0em;
-}
+    /* font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em; This is the original design from the figma file, which i removed for consistency of fonts in this component
+*/} 

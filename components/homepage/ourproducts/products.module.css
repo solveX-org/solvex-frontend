@@ -1,0 +1,79 @@
+.container{
+    @apply py-[4rem]
+}
+.inneContainer{
+    @apply overflow-hidden
+}
+.productsContainer{
+    @apply flex gap-[2rem] mt-[3rem] overflow-x-scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+.productCard{
+  min-width: 546px !important;
+  height: 470px;
+  padding: 38px 33px 38px 33px;
+  border-radius: 15px;
+}
+.ComingSoonCard{
+  @apply  bg-[var(--move-background)] flex justify-center items-center;
+}
+.ComingSoonCard h1{
+  @apply uppercase;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--text-white);
+}
+.ActiveCard{
+  border: 1px solid var(--blue-border);
+}
+.imageCint{
+  @apply rounded-[1rem] overflow-hidden;
+}
+.image{
+  @apply transition duration-500 relative;
+}
+.productCard:hover .image{
+  transform: scale(1.05);
+}
+.productCard:hover .image p{
+    @apply bg-black/10;
+}
+.image p{
+    @apply absolute w-full h-full top-0 transition duration-500 ;
+}
+.botton{
+    @apply transition duration-500;
+    padding: 10px;
+    border-radius: 41px;
+    background-color: var(--light-black-bg);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-blue)
+}
+.productCard:hover .botton{
+    background-color: var(--orange-background);
+    color: var(--text-white)
+}
+.name{
+    @apply text-[1.2rem] w-fit mt-[2rem] capitalize;
+}
+.botton1{
+    @apply text-[1.8rem] font-[800];
+}
+.botton1:hover{
+    background-color: var(--light-black-bg) !important;
+    color: var(--text-blue) !important;
+}
+.text{
+    @apply flex items-end justify-between h-[7.5rem];
+}
+.text p{
+    @apply w-[80%] text-justify text-[var(--text-black-lt)];
+    font-size: 1.1rem;
+    font-weight: 400;
+
+}
