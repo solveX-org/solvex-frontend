@@ -12,78 +12,7 @@ export default function Home() {
       <Hero/>
       <About/>
       <OurProducts/>
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvb
-      lorem20kjytgfvgbhjkuytfcvbnmjhgfvbnmjhgfvbnmhgvbnbvbnjnbnbvbhbvbbvbnbvbnnbvbv
+   
       <ContactUs/>
       <Footer/>
     </main>

@@ -1,3 +1,69 @@
 .container{
-    background-color: red;
+
+}
+.containerInner{
+
+}
+.flexbox{
+    @apply bg-[var(--footer-bg)] flex gap-[4rem] px-[5rem] py-[4rem]
+}
+.box1{
+    @apply flex-[50%]
+}
+.box2{
+    @apply flex-[50%] flex flex-col justify-between;
+
+}
+.aboutCard{
+    @apply bg-[var(--white-bg)]  rounded-[35px];
+    padding: 29px 30px 29px 30px;
+}
+.aboutCard:first-of-type{
+    @apply mb-[1.5rem];
+}
+.aboutCard h1{
+    @apply flex capitalize justify-center  items-center gap-[1rem] text-[var(--text-orange)];
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    
+}
+.aboutCard h1 span{
+    @apply p-3 aspect-square rounded-full bg-[var(--orange-background)] text-[var(--text-white)]
+}
+.aboutText{
+    @apply capitalize;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.header, .header2{
+    @apply text-[var(--text-black-9)] ;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 55px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.header span, .header2{
+    @apply text-[var(--text-blue)];
+}
+.header2{
+    @apply mb-[2.5rem];
+}
+.btn2{
+    @apply w-fit;
+}
+.content{
+    @apply text-justify text-[var(--text-black-lt)];
+    width: 80%;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
 }

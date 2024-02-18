@@ -7,7 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255; */
   --orange-background: #FE7131;
-
+  --white-bg-main:  #FFFFFF;
 
   /* text */
   --text-orange-dk: #E07748;
@@ -15,10 +15,16 @@
   --text-black: #000000;
   --text-orange: #FE7131;
   --text-white: white;
+  --text-black-9: #1C1C1C;
+  --text-blue: #2B43D5;
+  --text-black-lt: #3A3A3A;
+
+
   
   /* components */
   --dark-border: #808080;
   --footer-bg: #F9F9F9;
+  --white-bg: white;
 
   /* line */
   --line-dark: #808080;
@@ -58,4 +64,24 @@
   background-color: transparent;
   color: var(--orange-background);
   border: 0.1rem solid var(--orange-background);
+}
+.btn2{
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  padding: 2rem 5rem;
+  border-radius: 20px;
+  background-color: var(--white-bg-main);
+  color: var(--text-orange);
+}
+.title{
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--text-ash-lt);
+  margin-bottom: 1rem;
+  text-transform: capitalize;
 }
