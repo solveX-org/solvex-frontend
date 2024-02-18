@@ -22,7 +22,7 @@ function index() {
       text={data.text}
       url={data.url} />) 
       ,
-      ...[1,2,3].map(data=><ComingSoonCard/>)]
+      ...[1,2,3].map((data, index)=><ComingSoonCard key={index}/>)]
     
   }
   console.log()
