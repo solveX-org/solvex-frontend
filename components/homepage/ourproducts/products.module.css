@@ -113,12 +113,12 @@ background-color: var(--light-black-bg);
 }
 
 .productsContainer::-webkit-scrollbar-thumb {
-background-color: var(#FE7131);
+background-color: var(--orange-background);
 border-radius: 4px;
 }
 
 .productsContainer::-webkit-scrollbar-thumb:hover {
-background: var(#FE7131);
+background: var(--orange-background);
 }
 /* //////////////////////////////////////// */
 
