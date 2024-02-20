@@ -12,9 +12,7 @@ function index() {
             <ImageCont
               src={'/images/woman.png'} 
               alt={'solveX'} 
-              width={'360px'} 
-              height={'540px'} 
-              style={''}/> 
+              style={style.image}/> 
 
               <form className={style.form}>
                 <div className={style.name}>

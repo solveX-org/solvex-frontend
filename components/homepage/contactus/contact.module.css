@@ -17,7 +17,9 @@
 .label{
     @apply w-full mb-[5rem] flex-[100%]  transition duration-200;
 }
-
+.image{
+    @apply w-[360px] h-[540px];
+}
 .fname, 
 .lname{
     font-size: 20px;
@@ -46,5 +48,75 @@
     @apply text-[var(--text-orange)]
 }
 .submit{
-    @apply w-full rounded-[15px] transition duration-200 py-[1.5rem] bg-[var(--orange-background)] hover:bg-white border-[0.2px] font-[400] text-[1.2rem] hover:border-[var(--orange-background)] hover:text-[var(--orange-background)] text-[var(--text-white)] ;
+    @apply w-full rounded-[10px] transition duration-200 py-[1.5rem] bg-[var(--orange-background)] hover:bg-white border-[0.2px] font-[400] text-[1.2rem] hover:border-[var(--orange-background)] hover:text-[var(--orange-background)] text-[var(--text-white)] ;
+}
+@media screen and (max-width: 1180px) {
+    .container{
+        @apply py-[4rem]
+    }
+    .innercontainer{
+        /* @apply  */
+    }
+    .main{
+        @apply rounded-[15px] flex gap-[2rem] p-[1rem];
+    }
+    .form{
+        flex-grow: 1;
+        padding-top: 0rem
+    }
+    .image{
+        @apply w-[180px] h-[270px];
+    }
+    .name{
+        @apply flex flex-col gap-[1rem];
+    }
+    .label{
+        @apply w-full mb-[0rem] flex-[100%]  transition duration-200;
+    }
+    
+    .fname, 
+    .lname{
+        font-size: 12px;
+        font-weight: 400;
+        text-align: left;
+    }
+    .fname_input, 
+    .lname_input, 
+    .email_input{
+     @apply w-full text-[0.8rem] pt-0;
+    }
+    .label2{
+        @apply w-full mb-[0rem] ;
+    }
+    .label3{
+        @apply w-full mb-[0rem] ;
+    }
+    .emailthing{
+        @apply h-[2rem]
+    }
+    
+    .submit{
+        @apply  py-[0.5rem] font-[400] text-[0.9rem] ;
+    }
+    
+}
+@media screen and (max-width: 550px) {
+    .form{
+        @apply px-2 bg-slate-950/50;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        margin-left: -8rem;
+        z-index: 6;
+        color: var(--text-white);
+        backdrop-filter: blur(4px);
+    }
+    .fname, 
+    .lname{
+        color: var(--text-white);
+    }
+    .fname_input, 
+    .lname_input, 
+    .email_input{
+    @apply border-b-[var(---white-border)]  focus:border-b-[var(--line-orange)];
+    }
 }
