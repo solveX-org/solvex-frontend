@@ -11,14 +11,16 @@ function Footer() {
       <div className={`width ${style.innercontainer}`}>
         <div className={`${style.innercontainer2}`}>
           <div className={style.logoText}>
-            <ImageCont
-              src={'/images/mini_logo.png'} 
-              alt={'solveX'} 
-              width={'200px'} 
-              height={'144px'} 
-              style={'mb-[1rem]'}/>
-              <p>Crafting Solutions</p>
-              <p> That Put You First...</p>
+            <Link href={'/'}>
+              <ImageCont
+                src={'/images/mini_logo.png'} 
+                alt={'solveX'} 
+                style={`${style.logo}`}/>
+            </Link>
+              <span>
+                <p>Crafting Solutions</p>
+                <p> That Put You First...</p>
+              </span>
           </div>
 
           <div className={style.footernav}>
