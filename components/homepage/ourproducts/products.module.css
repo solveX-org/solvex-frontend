@@ -127,7 +127,7 @@ background: var(--orange-background);
         @apply pt-[2rem] pb-[0rem]
     }
     .productsContainer {
-        @apply flex gap-[2rem] mt-[3rem];
+        @apply flex gap-[2rem] mt-[1rem];
     }
     .productCard{
       min-width: 273px !important;
