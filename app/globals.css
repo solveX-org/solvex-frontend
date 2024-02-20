@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  outline: transparent;
+}
 :root {
   /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -32,6 +35,7 @@
 
   /* line */
   --line-dark: #808080;
+  --line-orange: #FE7131;
 
   /* borders */
   --blue-border: #2B43D4;

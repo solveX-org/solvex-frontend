@@ -34,7 +34,7 @@ function index() {
   }
 
   const handleScroll =()=>{
-    ref.current.scrollRight = 550*(scrollPoint-1);
+    ref.current.scrollLeft = 550*(scrollPoint-1);
     setscrollPoint(scrollPoint - 1)
   }
   const handleScrollforward =()=>{

@@ -1,0 +1,50 @@
+.container{
+    @apply py-[4rem]
+}
+.innercontainer{
+    /* @apply  */
+}
+.main{
+    @apply flex gap-[6rem] bg-[var(--light-black-bg)] p-[2rem] rounded-[2rem];
+}
+.form{
+    flex-grow: 1;
+    padding-top: 1.5rem
+}
+.name{
+    @apply flex gap-[6rem]
+}
+.label{
+    @apply w-full mb-[5rem] flex-[100%]  transition duration-200;
+}
+
+.fname, 
+.lname{
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    color: var(--text-ash-lt);
+}
+.fname_input, 
+.lname_input, 
+.email_input{
+ @apply w-full transition duration-200 bg-transparent pt-[1rem] text-[1.1rem] border-b-[0.1rem] border-b-[var(--line-dark)]  focus:border-b-[var(--line-orange)];
+}
+.label2{
+    @apply w-full mb-[5rem] transition duration-200;
+}
+.label3{
+    @apply w-full mb-[2rem] transition duration-200;
+}
+.emailthing{
+    @apply h-[4rem]
+}
+.label:focus-within .fname,
+.label:focus-within .lname,
+.label3:focus-within .fname,
+.label2:focus-within .fname{
+    @apply text-[var(--text-orange)]
+}
+.submit{
+    @apply w-full rounded-[15px] transition duration-200 py-[1.5rem] bg-[var(--orange-background)] hover:bg-white border-[0.2px] font-[400] text-[1.2rem] hover:border-[var(--orange-background)] hover:text-[var(--orange-background)] text-[var(--text-white)] ;
+}
