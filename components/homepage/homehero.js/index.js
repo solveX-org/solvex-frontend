@@ -16,6 +16,7 @@ function index() {
             style={style.explorebtn}/>
         </div>
         <div className={style.imageConatiner}>
+          
           <ImageCont
             src={'/images/laptoppresser.png'} 
             alt={'solveX'} 
@@ -29,6 +30,7 @@ function index() {
             width={'4rem'} 
             height={'4rem'} 
             style={'mb-[5rem]'}/> 
+
         </div>
       </div>
     </div>

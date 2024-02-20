@@ -101,7 +101,7 @@
         @apply flex gap-[0.8rem] pt-[8rem] text-[var(--text-orange)] text-[1.7rem] m-auto justify-center
     }
     .copyright{
-        font-size: 15px;
+        font-size: 10px;
         line-height: 28px;
         letter-spacing: 0.08em;
         text-align: center;
