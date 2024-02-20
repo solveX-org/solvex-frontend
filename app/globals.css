@@ -111,3 +111,22 @@
     margin-bottom: 1rem;
   }
 }
+@media screen and (min-width: 1200px) {
+  .md{
+    @apply hidden;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .lg{
+    @apply hidden;
+  }
+  .btn2{
+    background-color: var(--orange-background);
+    color: var(--text-white);
+    padding: 1rem 2rem;
+  }
+.btn2:hover{
+    background-color: var(--white-bg-main);
+    color: var(--text-orange);
+  }
+}

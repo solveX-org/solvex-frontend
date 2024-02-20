@@ -36,7 +36,7 @@
 }
 .aboutText{
     @apply capitalize;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 28px;
     letter-spacing: 0em;
@@ -44,7 +44,7 @@
 }
 .header, .header2{
     @apply text-[var(--text-black-9)] ;
-    font-size: 45px;
+    font-size: 43px;
     font-weight: 700;
     line-height: 55px;
     letter-spacing: 0em;
@@ -71,3 +71,136 @@
     line-height: 28px;
     letter-spacing: 0em; This is the original design from the figma file, which i removed for consistency of fonts in this component
 */} 
+
+@media screen and (min-width: 1200px) and (max-width: 1350px){
+    .flexbox{
+        @apply px-[2rem];
+   }
+   .header, .header2{
+    @apply text-[35px]
+   }
+   .content{
+        font-size: 18px;
+        width: 100%;
+    }
+    .aboutText{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 1200px){
+    .container{
+        @apply p-0;
+    }
+    .containerInner{
+        @apply p-0 m-0;
+        padding: 0rem !important;
+    }
+    .flexbox{
+        @apply flex-col px-[0rem] pt-0 gap-[2rem] bg-[var(--white-bg-main)];
+   }
+   .header, .header2{
+    @apply text-[35px]
+   }
+   .content{
+        font-size: 24px;
+        width: 70%;
+        margin: auto;
+    }
+    .aboutText{
+        font-size: 18px;
+    }
+    .box1{
+        order: 2;
+        @apply flex gap-[1rem];
+    }
+    .box2{
+        order: 1;
+        @apply p-0 py-4 bg-[var(--footer-bg)]; 
+    }
+    .box2 *{
+        text-align: center;
+    }
+    .btn2{
+        @apply m-auto mt-[1rem]; 
+    }
+    .aboutCard{
+        @apply rounded-[15px] bg-[var(--footer-bg)];
+        padding: 29px 30px 29px 30px;
+    }
+    .aboutCard:first-of-type{
+        @apply mb-[0rem];
+    }
+    .aboutCard h1{
+        @apply flex flex-col capitalize justify-center items-center gap-[1rem];
+        font-size: 22px;
+        text-align: center;
+        padding-bottom: 1.5rem;
+        
+    }
+    .aboutCard h1 span{
+        @apply p-3 aspect-square rounded-full;
+    }
+    .aboutText{
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+}
+
+
+
+
+@media screen and (max-width: 850px) {
+    .flexbox{
+        @apply px-[1rem];
+   }
+   .header, .header2{
+    @apply text-[22px];
+    line-height: 30px;
+   }
+   .content{
+        font-size: 14px;
+        width: 100%;
+        margin: auto;
+    }
+    .aboutText{
+        font-size: 18px;
+    }
+    .box1{
+        order: 2;
+        @apply flex gap-[1rem];
+    }
+    .box2 *{
+        order: 1;
+        text-align: center;
+    }
+    .btn2{
+        @apply m-auto mt-[1rem]; 
+    }
+    .aboutCard{
+        @apply rounded-[15px];
+        padding: 10px 5px 10px 5px;
+    }
+    .aboutCard:first-of-type{
+        @apply mb-[0rem];
+    }
+    .aboutCard h1{
+        @apply flex flex-col capitalize justify-center items-center gap-[0.2rem];
+        font-size: 12px;
+        text-align: center;
+        padding-bottom: 0rem;
+        
+    }
+    .aboutCard h1 span{
+        @apply p-3 aspect-square rounded-full;
+    }
+    .aboutText{
+        font-size: 10px;
+        font-weight: 300;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+}

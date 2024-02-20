@@ -15,12 +15,14 @@ function index() {
                 title={'Solution Architect'}
                 icon={<RiPaintBrushFill/>} 
                 p1={'Experience the power of strategic architecture '} 
-                p2={'without the overhead. Your solution,Our expertise.'}/>
+                p2={'without the overhead. Your solution,Our expertise.'}
+                p3={'Experience the power of strategic architecture without the overhead. Your solution,Our expertise.'}/>
               <AboutCard
                 title={'Software Development'}
                 icon={<GrCloudSoftware/>} 
                 p1={'Experience cutting-edge technology, all delivered with the '} 
-                p2={'commitment to exceed your expectations.'}/>
+                p2={'commitment to exceed your expectations.'}
+                p3={'Experience cutting-edge technology, all delivered with the commitment to exceed your expectations.'}/>
             </div>
             <div className={style.box2}>
               <h1 className={style.header}>Making Living Easy; <span>One </span></h1>
@@ -38,12 +40,13 @@ function index() {
 
 export default index
 
-export const AboutCard = ({title, icon, p1, p2}) =>{
+export const AboutCard = ({title, icon, p1, p2, p3}) =>{
   return(<div className={style.aboutCard}>
     <h1><span>{icon}</span> {title}</h1>
     <span>
-      <p className={style.aboutText}>{p1}</p>
-      <p className={style.aboutText}>{p2}</p>
+      <p className={`${style.aboutText} lg`}>{p1}</p>
+      <p className={`${style.aboutText} lg`}>{p2}</p>
+      <p className={`${style.aboutText} md`}>{p3}</p>
     </span>
   </div>)
 }
