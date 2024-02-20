@@ -17,6 +17,9 @@
   padding: 38px 33px 38px 33px;
   border-radius: 15px;
 }
+.image{
+    @apply w-[100%] h-[12rem;]
+}
 .ComingSoonCard{
   @apply  bg-[var(--move-background)] flex justify-center items-center;
 }
@@ -116,4 +119,65 @@ border-radius: 4px;
 
 .productsContainer::-webkit-scrollbar-thumb:hover {
 background: #555;
+}
+/* //////////////////////////////////////// */
+
+@media screen and (max-width: 550px) {
+    .container{
+        @apply pt-[2rem] pb-[0rem]
+    }
+    .productsContainer {
+        @apply flex gap-[2rem] mt-[3rem];
+    }
+    .productCard{
+      min-width: 273px !important;
+      height: 235px;
+      padding: 11px 10px 11px 10px;
+      border-radius: 10px;
+    }
+    .ComingSoonCard{
+      @apply flex justify-center items-center;
+    }
+    .ComingSoonCard h1{
+      @apply uppercase;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+    .imageCint{
+      @apply rounded-[0.5rem];
+    }
+    .image{
+        @apply w-[100%] h-[6rem;]
+    }
+    .botton{
+        padding: 4px 10px;
+        border-radius: 41px;
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .name{
+        @apply text-[0.9rem] w-fit mt-[0.2rem] rounded-tl-none;
+    }
+    .botton1{
+        @apply text-[1.8rem] font-[800] p-[4px];
+    }
+    .text{
+        @apply h-[5rem];
+    }
+    .text p{
+        @apply w-[80%] ;
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+    .leftbtn{
+     @apply -left-6 top-[55%];  
+        font-size: 15px;
+    }
+    .rightbtn{
+        @apply -right-6 top-[55%]; 
+        font-size: 15px;
+       
+    }
+  
 }

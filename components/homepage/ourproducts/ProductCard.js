@@ -11,8 +11,7 @@ function ProductCard({img, alt, name, text, url}) {
                 <ImageCont
                     src={img}
                     alt={alt}
-                    height={'12rem'}
-                    width={'100%'}/>
+                    style={style.image}/>
                 <p></p>
             </div>
         </div>
