@@ -7,7 +7,7 @@ import { useRef, useState } from 'react'
 //add a carousel slide to this and more importantly a scroll tab showing the length of scroll one has to do
 //the left scroll is still not working
 
-function index() {
+function Index() {
   const ref = useRef(null)
   const [scrollPoint, setscrollPoint] = useState(0)
 
@@ -61,7 +61,7 @@ function index() {
   )
 }
 
-export default index
+export default Index
 
 
 export const ComingSoonCard = () =>{
