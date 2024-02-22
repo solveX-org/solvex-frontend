@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { FaSquareInstagram, FaSquarePinterest } from 'react-icons/fa6'
 import { IoLogoFacebook } from 'react-icons/io'
 
-function nav() {
+function Nav() {
     const [toggle, setToggle] = useState(true)
     // const [toggle, setToggle] = useState(false)
 
@@ -57,4 +57,4 @@ function nav() {
   )
 }
 
-export default nav
+export default Nav
