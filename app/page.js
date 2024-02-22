@@ -8,13 +8,16 @@ import Footer from '@/components/common/footer'
 export default function Home() {
   return (
     <main>
-      <Nav/>
-      <Hero/>
-      <About/>
-      <OurProducts/>
-   
-      <ContactUs/>
-      <Footer/>
+      <div className='order-2 -z-10 relative'>
+        <Hero/>
+        <About/>
+        <OurProducts/>
+        <ContactUs/>
+        <Footer/>
+      </div>
+      <div className='order-1 z-50'>
+        <Nav/>
+      </div>
     </main>
   );
 }

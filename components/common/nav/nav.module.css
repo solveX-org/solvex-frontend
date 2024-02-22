@@ -8,11 +8,92 @@
     @apply flex gap-[4rem] items-center;
 }
 .nav{
-    @apply py-[1rem];
+    @apply py-[1rem] absolute top-0 left-0 w-full bg-[var(--white-bg-main)];
 }
 .productTag{
     @apply text-[var(--text-orange-dk)] hover:opacity-70 transition duration-100 font-[600] text-[1.2rem];
 }
 .aboutTag{
     @apply text-[var(--text-ash-lt)] hover:opacity-70 transition duration-100 font-[500] text-[1.2rem];
+}
+.toggle{
+    @apply hidden;
+}
+.navigation2{
+    @apply hidden;
+}
+.hiddenNavigation2{
+    /* should have all th propertoies of the above plus the ability to hide om click */
+    @apply hidden;
+}
+@media screen and (max-width: 1000px) {
+    .container{
+        @apply flex justify-between items-center;
+    }
+    .navigations{
+        @apply hidden;
+    }
+    .innerNav{
+        @apply flex gap-[4rem] items-center;
+    }
+    .nav{
+        @apply py-[1rem] fixed top-0 w-full left-0 border-b-[0.1rem];
+    }
+    .productTag{
+        @apply text-[var(--text-orange-dk)] hover:opacity-70 transition duration-100 font-[600] text-[1.2rem];
+    }
+    .aboutTag{
+        @apply text-[var(--text-ash-lt)] hover:opacity-70 transition duration-100 font-[500] text-[1.2rem];
+    }
+    .toggle{
+        @apply block;
+    }
+    .navigation2{
+        @apply transition pb-[1rem] duration-200 flex flex-col justify-between fixed top-[4rem] left-0 w-full h-[calc(100vh-4rem)] bg-[var(--white-bg-main)] ;
+        z-index: 100000000000000000000000000000000000000000000000000000000000000000000000;
+    }
+    .hiddenNavigation2{
+        /* should have all th propertoies of the above plus the ability to hide om click */
+        @apply transition duration-200 block fixed top-[4rem] left-0 w-full h-[calc(100vh-4rem)] bg-[var(--white-bg-main)];
+        transform: translateX(100%);
+    }
+    /* #1 */
+    .div1{
+        @apply transition duration-200 h-[0.15rem] w-[2rem] bg-[var(--toggle-bg)] mb-[0.4rem] rounded;
+    }
+    .div01{
+        @apply transition duration-200 h-[0.15rem] w-[2rem] bg-[var(--toggle-bg)] mb-[0rem] rounded;
+        transform: rotate(45deg);
+    }
+    /* #2 */
+    .div2{
+        @apply transition duration-200 h-[0.15rem] w-[1.4rem] bg-[var(--toggle-bg)] rounded ml-auto;
+    }
+    .div02{
+        @apply hidden transition duration-200 h-[0.15rem] w-[1.4rem] bg-[var(--toggle-bg)] rounded ml-auto;
+    }
+    /* #3 */
+    .div3{
+        @apply transition duration-200 h-[0.14rem] w-[1.7rem] bg-[var(--toggle-bg)] mt-[0.4rem] rounded ml-auto;
+    }
+    .div03{
+        @apply transition duration-200 h-[0.14rem] w-[2rem] bg-[var(--toggle-bg)] mt-[0rem] rounded ml-auto;
+        transform: rotate(-45deg);
+    
+    }
+    .navigations2{
+        @apply px-[2rem] pt-[2rem] flex flex-col  gap-[1.5rem];
+    }
+    .navigations2 a{
+        @apply text-[1.8rem];
+    }
+    .aboutTag{
+
+    }   
+    .socials{
+        @apply  flex gap-2 justify-center text-[1.6rem] ;
+    }
+    .socials a{
+        @apply transition duration-200 hover:text-[var(--text-orange)];
+    }
 }

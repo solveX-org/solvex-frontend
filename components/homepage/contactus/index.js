@@ -17,21 +17,21 @@ function index() {
               <form className={style.form}>
                 <div className={style.name}>
                   <div className={`${style.label}`}>
-                    <label for={'inputfield'} className={style.fname}>First Name</label>
+                    <label htmlFor={'inputfield'} className={style.fname}>First Name</label>
                     <input id={'inputfield'} className={style.fname_input} type='text'/>
                   </div>
                   <div className={`${style.label}`}>
-                    <label for={'inputfield1'} className={style.lname}>Last Name</label>
+                    <label htmlFor={'inputfield1'} className={style.lname}>Last Name</label>
                     <input id={'inputfield1'} className={style.lname_input} type='text'/>
                   </div>
                 </div>
                 <div className={`${style.label2}`}>
-                  <label for={'inputfield2'} className={style.fname}>Email</label>
+                  <label htmlFor={'inputfield2'} className={style.fname}>Email</label>
                   <input id={'inputfield2'} className={style.email_input} type='email' />
                 </div>
 
                 <div className={`${style.label3}`}>
-                  <label for={'inputfield3'} className={style.fname}>Message</label>
+                  <label htmlFor={'inputfield3'} className={style.fname}>Message</label>
                   <textarea id={'inputfield3'} className={`${style.email_input} ${style.emailthing}`} type='email' placeholder='Write your message here'/>
                 </div>
 
