@@ -25,11 +25,12 @@ function Footer() {
 
           <div className={style.footernav}>
             <ul className={style.navItem}>
-              <li className={style.borderRight}><Link href={'/'}>Products</Link></li>
+              <li className={style.borderRight}><Link href={'#product'}>Products</Link></li>
               <li className={style.borderRight}><Link href={'/'}>Terms and conditions</Link></li>
-              <li className={style.borderRight}><Link href={'/'}>About us</Link></li>
-              <li><Link href={'/'}>Services</Link></li>
+              <li className={style.borderRight}><Link href={'#about'}>About us</Link></li>
+              <li><Link href={'#about'}>Services</Link></li>
             </ul>
+            {/* still have to add the links to the below */}
             <ul className={style.socials}>
               <li><a href={''}><FaSquareInstagram/></a></li>
               <li><a href={''}><IoLogoFacebook/></a></li>
@@ -44,4 +45,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default Footer;

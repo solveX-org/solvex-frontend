@@ -13,6 +13,7 @@ function index() {
           <p className={style.herotextMini}>Fostering a world where every product innovation enriches every aspect of living.</p>
           <Btn1 
             text={'Explore'}
+            href={'#product'}
             style={style.explorebtn}/>
         </div>
         <div className={style.imageConatiner}>

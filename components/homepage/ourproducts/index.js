@@ -44,7 +44,7 @@ function Index() {
   
 
   return (
-    <div className={`${style.container} width`}>
+    <div className={`${style.container} width`} id='product'>
         <div className='relative'>
           <div className={style.inneContainer}>
             <h1 className='title'> Our Products</h1>

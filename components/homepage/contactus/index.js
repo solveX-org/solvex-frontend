@@ -5,7 +5,7 @@ import style from './contact.module.css'
 
 function index() {
   return (
-    <div className={style.container}>
+    <div className={style.container} id='contact'>
         <div className={`${style.innercontainer} width`}>
           <h1 className='title'>Contact us</h1>
           <div className={style.main}>

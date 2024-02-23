@@ -10,6 +10,9 @@
 .nav{
     @apply py-[1rem] absolute top-0 left-0 w-full bg-[var(--white-bg-main)];
 }
+.img{
+    @apply w-[8rem] h-[3rem];
+}
 .productTag{
     @apply text-[var(--text-orange-dk)] hover:opacity-70 transition duration-100 font-[600] text-[1.2rem];
 }
@@ -27,6 +30,9 @@
     @apply hidden;
 }
 @media screen and (max-width: 1000px) {
+    .img{
+        @apply w-[5.4rem] h-[2rem];
+    }
     .container{
         @apply flex justify-between items-center;
     }

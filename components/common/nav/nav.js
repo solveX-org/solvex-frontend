@@ -13,20 +13,22 @@ function Nav() {
   return (
     <nav className={style.nav}>
         <div className={`${style.container} width`}>
-            <ImageCont
-                src={'/images/logo.png'} 
-                alt={''} 
-                width={'8rem'} 
-                height={'2.5rem'}
-                style={''}/>
+            <Link href={'/'}>
+                <ImageCont
+                    src={'/images/logo.png'} 
+                    alt={''} 
+                    // width={'8rem'} 
+                    // height={'3rem'}
+                    style={style.img}/>
+            </Link>
             <ul className={style.navigations}>
                 <div className={style.innerNav}>
-                    <li className={style.aboutTag}><Link href={'/'}> About</Link></li>
-                    <li className={style.aboutTag}><Link href={'/'}> Services</Link></li>
-                    <li className={style.aboutTag}><Link href={'/'}> Contact</Link></li>
+                    <li className={style.aboutTag}><Link href={'#about'}> About</Link></li>
+                    <li className={style.aboutTag}><Link href={'#about'}> Services</Link></li>
+                    <li className={style.aboutTag}><Link href={'#contact'}> Contact</Link></li>
                 </div>
                 <div className='h-[1.7rem] w-[0.1rem] bg-[var(--dark-border)]'></div>
-                <li><Link className={style.productTag} href={'/'}> Products</Link></li>
+                <li><Link className={style.productTag} href={'#product'}> Products</Link></li>
 
             </ul>
             <button onClick={()=>setToggle(!toggle)} className={style.toggle}>
@@ -37,17 +39,18 @@ function Nav() {
 
             <ul className={toggle? style.navigation2: style.hiddenNavigation2}>
                 <ul className={style.navigations2}>
-                    <li className={style.aboutTag}><Link href={'/'}> About</Link></li>
-                    <li className={style.aboutTag}><Link href={'/'}> Services</Link></li>
-                    <li className={style.aboutTag}><Link href={'/'}> Contact</Link></li>
-                    <li className={style.aboutTag}><Link className={style.productTag} href={'/'}> Products</Link></li>
+                    <li onClick={()=>setToggle(false)} className={style.aboutTag}><Link onClick={()=>setToggle(false)} href={'#about'}> About</Link></li>
+                    <li onClick={()=>setToggle(false)} className={style.aboutTag}><Link onClick={()=>setToggle(false)} href={'#about'}> Services</Link></li>
+                    <li onClick={()=>setToggle(false)} className={style.aboutTag}><Link onClick={()=>setToggle(false)} href={'#contact'}> Contact</Link></li>
+                    <li onClick={()=>setToggle(false)} className={style.aboutTag}><Link onClick={()=>setToggle(false)} className={style.productTag} href={'#product'}> Products</Link></li>
 
                 </ul>
                 <div className={''}>
                     <ul className={style.socials}>
-                        <li><a href={''}><FaSquareInstagram/></a></li>
-                        <li><a href={''}><IoLogoFacebook/></a></li>
-                        <li><a href={''}><FaSquarePinterest/></a></li>
+                        {/* i still need to work on this ones */}
+                        <li onClick={()=>setToggle(false)}><a onClick={()=>setToggle(false)} href={'#about'}><FaSquareInstagram/></a></li>
+                        <li onClick={()=>setToggle(false)}><a onClick={()=>setToggle(false)} href={'#about'}><IoLogoFacebook/></a></li>
+                        <li onClick={()=>setToggle(false)}><a onClick={()=>setToggle(false)} href={'#about'}><FaSquarePinterest/></a></li>
                     </ul>
                 </div>
             </ul>

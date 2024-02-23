@@ -7,6 +7,7 @@ body{
 
 *{
   outline: transparent;
+  scroll-behavior: smooth;
 }
 :root {
   /* --foreground-rgb: 0, 0, 0;
@@ -72,7 +73,6 @@ body{
   transition-duration: 200ms;
   width: Fixed (188px);
   height: Fixed (60px);
-  top: 420px;
   padding: 1rem 4rem;
   border-radius: 10px;
   gap: 10px;

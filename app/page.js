@@ -8,7 +8,7 @@ import Footer from '@/components/common/footer'
 export default function Home() {
   return (
     <main>
-      <div className='order-2 -z-10 relative'>
+      <div className='order-2 z-0 relative'>
         <Hero/>
         <About/>
         <OurProducts/>

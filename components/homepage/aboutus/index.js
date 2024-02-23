@@ -6,7 +6,7 @@ import Btn2 from '@/components/common/btn2';
 
 function index() {
   return (
-    <div className={style.container}>
+    <div className={style.container} id='about'>
       <div className={`${style.containerInner} width`}>
           <h1 className='title'>About us</h1>
           <div className={style.flexbox}>
@@ -30,6 +30,7 @@ function index() {
               <p className={style.content}>At solveX, we invite you to embark on a journey of transformative experiences, where technology meets purpose and innovation meets you. Scan through our products and decide which suites your needs.</p>
               <Btn2
                 style={style.btn2}
+                href={'#product'}
                 name={'View Products'}/>
             </div>
           </div>
