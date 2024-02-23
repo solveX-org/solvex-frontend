@@ -8,8 +8,7 @@ import { FaSquareInstagram, FaSquarePinterest } from 'react-icons/fa6'
 import { IoLogoFacebook } from 'react-icons/io'
 
 function Nav() {
-    const [toggle, setToggle] = useState(true)
-    // const [toggle, setToggle] = useState(false)
+    const [toggle, setToggle] = useState(false)
 
   return (
     <nav className={style.nav}>
