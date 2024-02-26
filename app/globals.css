@@ -135,3 +135,11 @@ body{
     color: var(--text-orange);
   }
 }
+.error{
+  @apply text-[0.7rem] -mb-[1rem] text-red-600 capitalize text-right w-full;
+}
+@media screen and (min-width: 1200px) {
+  .error{
+    @apply text-[0.9rem] -mb-[1.4rem];
+  }
+}

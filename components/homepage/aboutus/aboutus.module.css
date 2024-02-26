@@ -4,11 +4,12 @@
 .containerInner{
 
 }
+
 .flexbox{
     @apply bg-[var(--footer-bg)] flex gap-[4rem] px-[5rem] py-[4rem]
 }
 .box1{
-    @apply flex-[50%]
+    @apply flex-[50%];
 }
 .box2{
     @apply flex-[50%] flex flex-col justify-between;
@@ -21,6 +22,7 @@
 .aboutCard:first-of-type{
     @apply mb-[1.5rem];
 }
+
 .aboutCard h1{
     @apply flex capitalize justify-center  items-center gap-[1rem] text-[var(--text-orange)];
     font-size: 22px;

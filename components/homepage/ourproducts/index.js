@@ -3,34 +3,59 @@ import ProductCard from './ProductCard'
 import style from './products.module.css'
 import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
-import { useRef, useState } from 'react' 
-//add a carousel slide to this and more importantly a scroll tab showing the length of scroll one has to do
-//the left scroll is still not working
+import { useRef, useState } from 'react';
+import axios from 'axios';
+const apiLink = 'https://www.solvexng.com/api/v1/products/'
 
 function Index() {
   const ref = useRef(null)
   const [scrollPoint, setscrollPoint] = useState(0)
+  const [productData, setproductData] = useState(
+    [
+      {
+      logo: '/images/gethired.png',
+      name: 'GetHired',
+      description: 'Effortlessly connect job seekers with employment opportunities or employers with top talent, all with just one click.',
+      url: '/'
+    }
+  ]
+  )
+
+
+  const getData = async () => {
+    try {
+      const response = await axios.get(apiLink);
+      setproductData(response.message)
+    } catch (error) {
+      const errormsg= "Error fetching products, refresh your browser to try again"
+      
+    }
+  };
+  getData()
 
   const renderProducts = (products)=>{
-    if (products?.length > 4) 
-    return products.map((data, index)=><ProductCard
-      key={index}
-      img={data.img}
-      alt={data.alt}
-      name={data.name}
-      text={data.text}
-      url={data.url} />) 
-
-    return [...products.map((data, index)=><ProductCard
-      key={index}
-      img={data.img}
-      alt={data.alt}
-      name={data.name}
-      text={data.text}
-      url={data.url} />) 
-      ,
-      ...[1,2,3].map((data, index)=><ComingSoonCard key={index}/>)]
-    
+    if (products?.length > 4) {
+      return products.map((data, index)=><ProductCard
+        key={index}
+        img={data.logo}
+        alt={data.name}
+        name={data.name}
+        text={data.description}
+        url={data.url} />) }
+    else if (products?.length > 0) {
+      return [...products.map((data, index)=><ProductCard
+        key={index+4}
+        img={data.logo}
+        alt={data.name}
+        name={data.name}
+        text={data.description}
+        url={data.url} />) 
+        ,
+        ...[1,2,3].map((data, index)=><ComingSoonCard key={index}/>)]
+    }
+    else {
+      return({...[1,2,3,4].map((data, index)=><ComingSoonCard key={index}/>)})
+    }
   }
 
   const handleScroll =()=>{
@@ -70,15 +95,3 @@ export const ComingSoonCard = () =>{
     <h1>coming soon</h1>
   </div>
 }
-
-const productData = [
-  // The data displayed here is to be fecthed from our database for our products
-  // once the database is configured, we can start working on the fetchinf and appropriate rendering
-  {
-    img: '/images/gethired.png',
-    alt: 'gethired',
-    name: 'GetHired',
-    text: 'Effortlessly connect job seekers with employment opportunities or employers with top talent, all with just one click.',
-    url: '/'
-  }
-]
