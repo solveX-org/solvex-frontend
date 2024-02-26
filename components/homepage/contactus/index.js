@@ -9,7 +9,7 @@ const apiroute= 'https://www.solvexng.com/api/v1/contact-us/'
 // once he comes through with the url where you are to send the form inputs collect with formik and send
 
 
-function index() {
+function Index() {
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState('');
 
@@ -92,7 +92,7 @@ function index() {
   )
 }
 
-export default index
+export default Index
 
 
 
