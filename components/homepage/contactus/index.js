@@ -81,7 +81,7 @@ function Index() {
                         </div>
 
                         <input className={style.submit} type='submit' disabled={isSubmitting} value={'Send'}/>
-                        {!isSent && <div className='text-[0.7rem] w-full text-center pt-1 '>Message sent successfully!, thanks for your feedback.</div>}
+                        {isSent && <div className='text-[0.7rem] w-full text-center pt-1 '>Message sent successfully!, thanks for your feedback.</div>}
                         {error && <div className="error">{error}</div>}
                       </Form>
                 )}
