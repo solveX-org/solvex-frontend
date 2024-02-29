@@ -5,7 +5,7 @@ import style from './contact.module.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import axios from 'axios';
 import { useState } from 'react';
-const apiroute= 'https://api.solvexng.com/api/v1/contact-us/'
+const apiroute= 'api.solvexng.com/api/v1/contact-us/'
 // once he comes through with the url where you are to send the form inputs collect with formik and send
 
 

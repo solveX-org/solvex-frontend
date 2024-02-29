@@ -6,7 +6,7 @@ import { MdArrowBackIosNew } from "react-icons/md";
 import { useRef, useState } from 'react';
 import axios from 'axios';
 import { FaFacebook } from 'react-icons/fa6';
-const apiLink = 'https://api.solvexng.com/api/v1/products/'
+const apiLink = 'api.solvexng.com/api/v1/products/'
 
 function Index() {
   const ref = useRef(null)
@@ -33,6 +33,8 @@ function Index() {
     ref.current.scrollLeft = 550*(scrollPoint+1);
     setscrollPoint(scrollPoint + 1)
   }
+
+  console.log(productData)
 
   return (
     <div className={`${style.container} width`} id='product'>
