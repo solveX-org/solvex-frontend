@@ -32,9 +32,9 @@ function Footer() {
             </ul>
             {/* still have to add the links to the below */}
             <ul className={style.socials}>
-              <li><a href={''}><FaSquareInstagram/></a></li>
-              <li><a href={''}><IoLogoFacebook/></a></li>
-              <li><a href={''}><FaSquarePinterest/></a></li>
+              <li><a href={'https://www.instagram.com/solvexng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='}><FaSquareInstagram/></a></li>
+              <li><a href={'https://www.facebook.com/solvexng/'}><IoLogoFacebook/></a></li>
+              <li><a href={'https://www.pinterest.com/solveXng/'}><FaSquarePinterest/></a></li>
             </ul>
           </div>
         </div>

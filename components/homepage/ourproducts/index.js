@@ -5,6 +5,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { useRef, useState } from 'react';
 import axios from 'axios';
+import { FaFacebook } from 'react-icons/fa6';
 const apiLink = 'https://api.solvexng.com/api/v1/products/'
 
 function Index() {
@@ -80,3 +81,8 @@ export const ComingSoonCard = () =>{
     <h1>coming soon</h1>
   </div>
 }
+
+
+
+
+
