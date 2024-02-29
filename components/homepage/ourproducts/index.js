@@ -6,7 +6,7 @@ import { MdArrowBackIosNew } from "react-icons/md";
 import { useRef, useState } from 'react';
 import axios from 'axios';
 import { FaFacebook } from 'react-icons/fa6';
-const apiLink = 'api.solvexng.com/api/v1/products/'
+const apiLink = 'https://api.solvexng.com/api/v1/products/'
 
 function Index() {
   const ref = useRef(null)
@@ -17,6 +17,7 @@ function Index() {
     try {
       const response = await axios.get(apiLink);
       // am receiving a cores error from this pint of fetching data, I hope that logging into the resourse will allow it be fetched
+      console.log(response.message)
       setproductData(response.message)
     } catch (error) {
       const errormsg= "Error fetching products, refresh your browser to try again"
