@@ -33,8 +33,7 @@ function index() {
             <div className={style.box2}>
               <h1 className={style.header}>Making Living Easy; <span>One </span></h1>
               <h1 className={style.header2}> Product At A Time</h1>
-              {/* <p className={style.content}>At solveX, we invite you to embark on a journey of transformative experiences, where technology meets purpose and innovation meets you. Scan through our products and decide which suites your needs.</p> */}
-              <AnimatedText className={style.content} text={'TAt solveX, we invite you to embark on a journey of transformative experiences, where technology meets purpose and innovation meets you. Scan through our products and decide which suites your needs.'}/>
+              <AnimatedText className={style.content} text={'At solveX, we invite you to embark on a journey of transformative experiences, where technology meets purpose and innovation meets you. Scan through our products and decide which suites your needs.'}/>
               <Btn2
                 style={style.btn2}
                 href={'#product'}
