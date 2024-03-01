@@ -44,13 +44,13 @@ function Index() {
         <div className={style.innerContainer}>
           <h1 className="title">Our Products</h1>
           <div className={style.productsContainer} ref={ref}>
-            {/* Check for error if there is any error */}
-            {errorMessage && <div className={style.error}>{errorMessage}</div>}
-            
-            {/* TODO add a display it will show if product not available */}
-            {/* TODO render image. Image rendering is still faulty */}
-            {/* Only render elements when productData is loaded */}
-            {productData.length > 0 && (
+           
+            {!productData.length 
+              && [...Array(4 - productData.length)].map((data, index) => (
+                  <ComingSoonCard key={index} />
+                ))}
+            {productData.length > 0 
+            && (
               <>
                 {[...productData].map((data, index) => (
                   <ProductCard
@@ -63,8 +63,9 @@ function Index() {
                   />
                 ))}
                 {/* Handle cases where productData is less than 4 */}
-                {productData.length < 4 &&
-                  [...Array(4 - productData.length)].map((_, index) => (
+                {productData.length < 4 
+                &&
+                  [...Array(4 - productData.length)].map((data, index) => (
                     <ComingSoonCard key={index} />
                   ))}
               </>
