@@ -14,15 +14,15 @@ function Index() {
   const [error, setError] = useState('');
 
   const initialValues = {
-    firstname: '',
-    lastname: '',
+    first_name: '',
+    last_name: '',
     email: '',
     message: ''
   };
 
   const validationSchema = Yup.object().shape({
-    firstname: Yup.string().required('Firstname is required'),
-    lastname: Yup.string().required('Lastname is required'),
+    first_name: Yup.string().required('Firstname is required'),
+    last_name: Yup.string().required('Lastname is required'),
     email: Yup.string().email('Invalid email').required('Email is required'),
     message: Yup.string().required('Message is required')
   });
@@ -57,14 +57,14 @@ function Index() {
                         <div className={style.name}>
                           <div className={`${style.label}`}>
                             <label htmlFor={'inputfield'} className={style.fname}>First Name</label>
-                            <Field id={'inputfield'} className={style.fname_input} type='text' name="firstname" />
-                            <ErrorMessage name="firstname" component="div" className="error" />
+                            <Field id={'inputfield'} className={style.fname_input} type='text' name="first_name" />
+                            <ErrorMessage name="first_name" component="div" className="error" />
                           </div>
 
                           <div className={`${style.label}`}>
                             <label htmlFor={'inputfield1'} className={style.lname}>Last Name</label>
-                            <Field id={'inputfield1'} className={style.lname_input} type='text' name="lastname" />
-                            <ErrorMessage name="lastname" component="div" className="error" />
+                            <Field id={'inputfield1'} className={style.lname_input} type='text' name="last_name" />
+                            <ErrorMessage name="last_name" component="div" className="error" />
                           </div>
                         </div>
 
