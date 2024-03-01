@@ -53,9 +53,10 @@ function Index() {
             {productData.length > 0 && (
               <>
                 {[...productData].map((data, index) => (
+                  
                   <ProductCard
                     key={index}
-                    img={data.logo}
+                    img={data.get_logo_absolute_url}
                     alt={data.name}
                     name={data.name}
                     text={data.description}
