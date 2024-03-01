@@ -48,9 +48,9 @@ function Nav() {
                 <div className={''}>
                     <ul className={style.socials}>
                         {/* i still need to work on this ones */}
-                        <li onClick={()=>setToggle(false)}><a onClick={()=>setToggle(false)} href={'https://www.instagram.com/solvexng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='}><FaSquareInstagram/></a></li>
-                        <li onClick={()=>setToggle(false)}><a onClick={()=>setToggle(false)} href={'https://www.facebook.com/solvexng/'}><IoLogoFacebook/></a></li>
-                        <li onClick={()=>setToggle(false)}><a onClick={()=>setToggle(false)} href={'https://www.pinterest.com/solveXng/'}><FaSquarePinterest/></a></li>
+                        <li onClick={()=>setToggle(false)}><a target='_blank' onClick={()=>setToggle(false)} href={'https://www.instagram.com/solvexng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='}><FaSquareInstagram/></a></li>
+                        <li onClick={()=>setToggle(false)}><a target='_blank' onClick={()=>setToggle(false)} href={'https://www.facebook.com/solvexng/'}><IoLogoFacebook/></a></li>
+                        <li onClick={()=>setToggle(false)}><a target='_blank' onClick={()=>setToggle(false)} href={'https://www.pinterest.com/solveXng/'}><FaSquarePinterest/></a></li>
                     </ul>
                 </div>
             </ul>
