@@ -20,6 +20,7 @@ function Index() {
       try {
         const response = await axios.get(apiLink);
         setProductData(response.data);
+        console(response.data);
       } catch (error) {
         setErrorMessage('Error fetching products. Please try again later.');
       }

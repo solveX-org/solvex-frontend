@@ -1,6 +1,13 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-    
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.solvexng.com",
+        pathname: '**',
+      },
+    ],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -22,11 +29,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
-
-
-// const path = require('path');
-
-// module.exports = {
-// };
 
