@@ -4,7 +4,6 @@ import OurProducts from '@/components/homepage/ourproducts'
 import ContactUs from '@/components/homepage/contactus'
 import Nav from '@/components/common/nav/nav'
 import Footer from '@/components/common/footer'
-import Card from '@/components/homepage/ourTeam'
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
         <Hero/>
         <About/>
         <OurProducts/>
-        <Card/>
         <ContactUs/>
         <Footer/>
       </div>

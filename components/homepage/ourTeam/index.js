@@ -1,8 +1,8 @@
 "use client"
 import Image from 'next/image'
 import style from './style.module.css'
-import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { BiMessageRounded } from "react-icons/bi";
@@ -37,10 +37,8 @@ export default Index
 
 export const Card = ({name, imgSrc, quote, role, imgBg})=>{
 
-    const { ref, inView } = useInView({
-        triggerOnce: true, 
-        threshold: 0.2, 
-      });
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true, amount: 0.2 });
 
     return (
     <div ref={ref} className={style.card2}>
