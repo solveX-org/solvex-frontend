@@ -1,109 +1,144 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* ═══════════════════════════════════════════════════════
+   FOOTER — Apple-clean light gray, minimal
+═══════════════════════════════════════════════════════ */
+.container {
+  background: #f5f5f7;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
 
-.copyright{
-    font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 28px;
-    letter-spacing: 0.08em;
-    text-align: center;
+.inner {
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
 }
-.logo{
-    @apply mb-[1rem] w-[200px] h-[144px];
+
+/* ── Top row: brand / nav / socials ────────────────── */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  padding-bottom: 2.5rem;
 }
-.hr{
-    border-top: solid 0.1rem var(--line-dark);
+
+/* Brand */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
-.container{
-    @apply bg-[var(--footer-bg)]
+
+.logo {
+  position: relative;
+  width: 100px;
+  height: 36px;
 }
-.innercontainer2{
-    @apply flex pt-[4rem] gap-[5rem];
+
+.tagline {
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6e6e73;
 }
-.logoText{
-    font-family: Poppins;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 34px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: var(--text-ash-lt);
+
+/* Nav */
+.nav {
+  padding-top: 0.2rem;
 }
-.footernav{
-    font-family: Poppins;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 35px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: var(--text-ash-lt);
-    display: flex;
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navList a {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #6e6e73;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navList a:hover {
+  color: #1d1d1f;
+}
+
+/* Socials */
+.socialsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-top: 0.2rem;
+}
+
+.followLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #aeaeb2;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  color: #6e6e73;
+  font-size: 1rem;
+  transition: all 0.22s ease;
+}
+
+.socials a:hover {
+  background: #FE7131;
+  border-color: #FE7131;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(254, 113, 49, 0.3);
+}
+
+/* ── Divider + copyright ───────────────────────────── */
+.divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.07);
+  margin-bottom: 1.5rem;
+}
+
+.copyright {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #aeaeb2;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media screen and (max-width: 700px) {
+  .top {
     flex-direction: column;
-    justify-content: flex-end;
-    padding-top: 5rem;
-    align-items: flex-end;
-}
-.borderRight{
-    border-right: 0.1rem var(--line-dark) solid;
-    padding-right: 3rem;
-}
-.navItem{
-    display: flex;
-    gap: 3rem;
-}
-.socials{
-    @apply flex gap-[2rem] text-[var(--text-orange)] text-[3rem] m-auto justify-center
-}
-.footernav a{
-    @apply transition duration-200 hover:opacity-55;
-}
-@media screen and (max-width: 1180px) {
-    .innercontainer2{
-        @apply block pt-[4rem] gap-[5rem];
-    }
-    .logoText{
-        font-size: 20px;
-        line-height: 20px;
-        letter-spacing: 0em;
-        text-align: left;
-        display: flex;
-        gap: 0rem;
-        align-items: center;
-    }
-    .footernav{
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 35px;
-        letter-spacing: 0em;
-        text-align: left;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        padding-top: 3rem;
-        padding-bottom: 2rem;
-        align-items: flex-end !important;
-    }
-    .logo{
-        @apply w-[100px] h-[72px] mb-[0];
-    }
-    .borderRight{
-        border-right: 0.1rem transparent solid;
-        padding-right: 3rem;
-    }
-    .navItem{
-        display: block;
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-        flex-grow: 1;
-    }
-    .socials{
-        @apply flex gap-[0.8rem] pt-[8rem] text-[var(--text-orange)] text-[1.7rem] m-auto justify-center
-    }
-    .copyright{
-        font-size: 10px;
-        line-height: 28px;
-        letter-spacing: 0.08em;
-        text-align: center;
-    }
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .navList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.2rem;
+  }
+
+  .logo { width: 80px; height: 28px; }
 }

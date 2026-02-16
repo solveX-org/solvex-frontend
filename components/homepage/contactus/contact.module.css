@@ -1,122 +1,207 @@
-.container{
-    @apply py-[4rem]
+/* ═══════════════════════════════════════════════════════
+   CONTACT — Apple-clean gray, editorial split layout
+═══════════════════════════════════════════════════════ */
+.container {
+  background: #f5f5f7;
+  padding: 7rem 0 8rem;
 }
-.innercontainer{
-    /* @apply  */
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+  align-items: start;
 }
-.main{
-    @apply flex gap-[6rem] bg-[var(--light-black-bg)] p-[2rem] rounded-[2rem];
+
+/* ── Left editorial column ─────────────────────────── */
+.left {
+  padding-top: 0.5rem;
 }
-.form{
-    flex-grow: 1;
-    padding-top: 1.5rem
+
+.sectionLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #FE7131;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.8rem;
 }
-.name{
-    @apply flex gap-[6rem]
+
+.heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #1d1d1f;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
 }
-.label{
-    @apply w-full mb-[5rem] flex-[100%]  transition duration-200;
+
+.orange {
+  color: #FE7131;
 }
-.image{
-    @apply w-[360px] h-[540px];
+
+.subtext {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #6e6e73;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 360px;
 }
-.fname, 
-.lname{
-    font-size: 20px;
-    font-weight: 400;
-    text-align: left;
-    color: var(--text-ash-lt);
+
+.infoCard {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.1rem 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
-.fname_input, 
-.lname_input, 
-.email_input{
- @apply w-full transition duration-200 bg-transparent pt-[1rem] text-[1.1rem] border-b-[0.1rem] border-b-[var(--line-dark)]  focus:border-b-[var(--line-orange)];
+
+.infoLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #aeaeb2;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
-.label2{
-    @apply w-full mb-[5rem] transition duration-200;
+
+.infoValue {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1d1d1f;
 }
-.label3{
-    @apply w-full mb-[2rem] transition duration-200;
+
+/* ── Right form column ─────────────────────────────── */
+.formCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
-.emailthing{
-    @apply h-[4rem]
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
 }
-.label:focus-within .fname,
-.label:focus-within .lname,
-.label3:focus-within .fname,
-.label2:focus-within .fname{
-    @apply text-[var(--text-orange)]
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
 }
-.submit{
-    @apply w-full rounded-[10px] transition duration-200 py-[1.5rem] bg-[var(--orange-background)] hover:bg-white border-[0.2px] font-[400] text-[1.2rem] hover:border-[var(--orange-background)] hover:text-[var(--orange-background)] text-[var(--text-white)] ;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
-@media screen and (max-width: 1180px) {
-    .container{
-        @apply py-[4rem]
-    }
-    .innercontainer{
-        /* @apply  */
-    }
-    .main{
-        @apply rounded-[15px] flex gap-[2rem] p-[1rem];
-    }
-    .form{
-        flex-grow: 1;
-        padding-top: 0rem
-    }
-    .image{
-        @apply w-[180px] h-[270px];
-    }
-    .name{
-        @apply flex flex-col gap-[1rem];
-    }
-    .label{
-        @apply w-full mb-[0rem] flex-[100%]  transition duration-200;
-    }
-    
-    .fname, 
-    .lname{
-        font-size: 12px;
-        font-weight: 400;
-        text-align: left;
-    }
-    .fname_input, 
-    .lname_input, 
-    .email_input{
-     @apply w-full text-[0.8rem] pt-0;
-    }
-    .label2{
-        @apply w-full mb-[0rem] ;
-    }
-    .label3{
-        @apply w-full mb-[0rem] ;
-    }
-    .emailthing{
-        @apply h-[2rem]
-    }
-    
-    .submit{
-        @apply  py-[0.5rem] font-[400] text-[0.9rem] ;
-    }
-    
+
+.label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: 0.02em;
 }
-@media screen and (max-width: 550px) {
-    .form{
-        @apply px-2 bg-slate-950/50 flex flex-col justify-center;
-        border-top-right-radius: 8px;
-        border-bottom-right-radius: 8px;
-        margin-left: -8rem;
-        z-index: 6;
-        color: var(--text-white);
-        backdrop-filter: blur(4px);
-    }
-    .fname, 
-    .lname{
-        color: var(--text-white);
-    }
-    .fname_input, 
-    .lname_input, 
-    .email_input{
-    @apply border-b-[var(---white-border)]  focus:border-b-[var(--line-orange)];
-    }
+
+.input {
+  background: #f5f5f7;
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  font-size: 0.92rem;
+  color: #1d1d1f;
+  transition: all 0.22s ease;
+  width: 100%;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: #aeaeb2;
+}
+
+.input:focus {
+  border-color: #FE7131;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(254, 113, 49, 0.1);
+  outline: none;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+/* ── Submit ────────────────────────────────────────── */
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  width: 100%;
+  background: #FE7131;
+  color: #fff;
+  border: none;
+  border-radius: 980px;
+  padding: 1rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.28s ease;
+  margin-top: 0.2rem;
+  font-family: inherit;
+}
+
+.submit:hover:not(:disabled) {
+  background: #e0601e;
+  transform: scale(1.02);
+  box-shadow: 0 8px 28px rgba(254, 113, 49, 0.35);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submitArrow {
+  transition: transform 0.25s ease;
+}
+
+.submit:hover:not(:disabled) .submitArrow {
+  transform: translateX(4px);
+}
+
+/* ── Feedback ──────────────────────────────────────── */
+.successMsg {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #2B43D5;
+  font-weight: 500;
+  padding: 0.8rem;
+  background: rgba(43, 67, 213, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(43, 67, 213, 0.12);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media screen and (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .subtext { max-width: 100%; }
+}
+
+@media screen and (max-width: 600px) {
+  .container { padding: 5rem 0 6rem; }
+  .formCard { padding: 1.8rem 1.5rem; }
+  .row { grid-template-columns: 1fr; gap: 1rem; }
+  .heading { font-size: 1.8rem; }
 }

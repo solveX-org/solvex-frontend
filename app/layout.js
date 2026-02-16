@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import favicon from '../app/favicon.ico'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +13,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-C1NTSWC0RV"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-C1NTSWC0RV');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

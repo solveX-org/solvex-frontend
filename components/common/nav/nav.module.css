@@ -1,105 +1,145 @@
-.container{
-    @apply flex justify-between items-center;
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  border-bottom: 1px solid transparent;
 }
-.navigations{
-    @apply flex gap-[3rem] items-center;
-}
-.innerNav{
-    @apply flex gap-[4rem] items-center;
-}
-.nav{
-    @apply py-[1rem] absolute top-0 left-0 w-full bg-[var(--white-bg-main)];
-}
-.img{
-    @apply w-[8rem] h-[3rem];
-}
-.productTag{
-    @apply text-[var(--text-orange-dk)] hover:opacity-70 transition duration-100 font-[600] text-[1.2rem];
-}
-.aboutTag{
-    @apply text-[var(--text-ash-lt)] hover:opacity-70 transition duration-100 font-[500] text-[1.2rem];
-}
-.toggle{
-    @apply hidden;
-}
-.navigation2{
-    @apply hidden;
-}
-.hiddenNavigation2{
-    /* should have all th propertoies of the above plus the ability to hide om click */
-    @apply hidden;
-}
-@media screen and (max-width: 1000px) {
-    .img{
-        @apply w-[5.4rem] h-[2rem];
-    }
-    .container{
-        @apply flex justify-between items-center;
-    }
-    .navigations{
-        @apply hidden;
-    }
-    .innerNav{
-        @apply flex gap-[4rem] items-center;
-    }
-    .nav{
-        @apply py-[1rem] fixed top-0 w-full left-0 border-b-[0.1rem];
-    }
-    .productTag{
-        @apply text-[var(--text-orange-dk)] hover:opacity-70 transition duration-100 font-[600] text-[1.2rem];
-    }
-    .aboutTag{
-        @apply text-[var(--text-ash-lt)] hover:opacity-70 transition duration-100 font-[500] text-[1.2rem];
-    }
-    .toggle{
-        @apply block;
-    }
-    .navigation2{
-        @apply transition pb-[1rem] duration-200 flex flex-col justify-between fixed top-[4rem] left-0 w-full h-[calc(100vh-4rem)] bg-[var(--white-bg-main)] ;
-        z-index: 100000000000000000000000000000000000000000000000000000000000000000000000;
-    }
-    .hiddenNavigation2{
-        /* should have all th propertoies of the above plus the ability to hide om click */
-        @apply transition duration-200 block fixed top-[4rem] left-0 w-full h-[calc(100vh-4rem)] bg-[var(--white-bg-main)];
-        transform: translateX(100%);
-    }
-    /* #1 */
-    .div1{
-        @apply transition duration-200 h-[0.15rem] w-[2rem] bg-[var(--toggle-bg)] mb-[0.4rem] rounded;
-    }
-    .div01{
-        @apply transition duration-200 h-[0.15rem] w-[2rem] bg-[var(--toggle-bg)] mb-[0rem] rounded;
-        transform: rotate(45deg);
-    }
-    /* #2 */
-    .div2{
-        @apply transition duration-200 h-[0.15rem] w-[1.4rem] bg-[var(--toggle-bg)] rounded ml-auto;
-    }
-    .div02{
-        @apply hidden transition duration-200 h-[0.15rem] w-[1.4rem] bg-[var(--toggle-bg)] rounded ml-auto;
-    }
-    /* #3 */
-    .div3{
-        @apply transition duration-200 h-[0.14rem] w-[1.7rem] bg-[var(--toggle-bg)] mt-[0.4rem] rounded ml-auto;
-    }
-    .div03{
-        @apply transition duration-200 h-[0.14rem] w-[2rem] bg-[var(--toggle-bg)] mt-[0rem] rounded ml-auto;
-        transform: rotate(-45deg);
-    
-    }
-    .navigations2{
-        @apply px-[2rem] pt-[2rem] flex flex-col  gap-[1.5rem];
-    }
-    .navigations2 a{
-        @apply text-[1.8rem];
-    }
-    .aboutTag{
 
-    }   
-    .socials{
-        @apply  flex gap-2 justify-center text-[1.6rem] ;
-    }
-    .socials a{
-        @apply transition duration-200 hover:text-[var(--text-orange)];
-    }
+.blur {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  height: 52px;
+}
+
+.logoLink {
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+.logo {
+  width: 7rem;
+  height: 2.5rem;
+}
+
+.links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.links a {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #1d1d1f;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.links a:hover {
+  opacity: 1;
+}
+
+.ctaBtn {
+  margin-left: auto;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #fff;
+  background: #FE7131;
+  padding: 0.45rem 1.1rem;
+  border-radius: 980px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.ctaBtn:hover {
+  background: #e0601e;
+  transform: scale(1.03);
+}
+
+/* ── Burger ──────────────────────────────────────── */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
+}
+
+.burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #1d1d1f;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+/* ── Mobile menu ─────────────────────────────────── */
+.mobileMenu {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding: 1.5rem 2rem 2rem;
+}
+
+.mobileLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.mobileLinks a {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1d1d1f;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.mobileSocials {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.4rem;
+  color: #6e6e73;
+}
+
+.mobileSocials a {
+  color: #6e6e73;
+  transition: color 0.2s;
+}
+
+.mobileSocials a:hover { color: #FE7131; }
+
+@media screen and (max-width: 860px) {
+  .links, .ctaBtn { display: none; }
+  .burger { display: flex; }
+}
+
+@media screen and (max-width: 480px) {
+  .logo { width: 5.5rem; height: 2rem; }
 }

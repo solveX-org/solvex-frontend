@@ -1,48 +1,66 @@
 import style from './footer.module.css'
 import ImageCont from '../images'
 import Link from 'next/link'
-import { IoLogoFacebook } from "react-icons/io";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaSquarePinterest } from "react-icons/fa6";
+import { IoLogoFacebook } from 'react-icons/io'
+import { FaSquareInstagram, FaSquarePinterest } from 'react-icons/fa6'
 
 function Footer() {
   return (
     <footer className={style.container}>
-      <div className={`width ${style.innercontainer}`}>
-        <div className={`${style.innercontainer2}`}>
-          <div className={style.logoText}>
-            <Link href={'/'}>
+      <div className={`width ${style.inner}`}>
+        <div className={style.top}>
+          {/* Brand */}
+          <div className={style.brand}>
+            <Link href='/'>
               <ImageCont
-                src={'/images/mini_logo.png'} 
-                alt={'solveX'} 
-                style={`${style.logo}`}/>
+                src={'/images/logo.png'}
+                alt={'SolveX'}
+                style={style.logo} />
             </Link>
-              <span>
-                <p>Crafting Solutions</p>
-                <p> That Put You First...</p>
-              </span>
+            <p className={style.tagline}>Crafting Solutions<br />That Put You First.</p>
           </div>
 
-          <div className={style.footernav}>
-            <ul className={style.navItem}>
-              <li className={style.borderRight}><Link href={'#product'}>Products</Link></li>
-              <li className={style.borderRight}><Link href={'/'}>Terms and conditions</Link></li>
-              <li className={style.borderRight}><Link href={'#about'}>About us</Link></li>
-              <li><Link href={'#about'}>Services</Link></li>
+          {/* Nav */}
+          <nav className={style.nav}>
+            <ul className={style.navList}>
+              <li><Link href='#product'>Products</Link></li>
+              <li><Link href='/'>Terms &amp; Conditions</Link></li>
+              <li><Link href='#about'>About us</Link></li>
+              <li><Link href='#about'>Services</Link></li>
             </ul>
-            {/* still have to add the links to the below */}
+          </nav>
+
+          {/* Socials */}
+          <div className={style.socialsCol}>
+            <p className={style.followLabel}>Follow us</p>
             <ul className={style.socials}>
-              <li><a target='_blank' href={'https://www.instagram.com/solvexng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='}><FaSquareInstagram/></a></li>
-              <li><a target='_blank' href={'https://www.facebook.com/solvexng/'}><IoLogoFacebook/></a></li>
-              <li><a target='_blank' href={'https://www.pinterest.com/solveXng/'}><FaSquarePinterest/></a></li>
+              <li>
+                <a target='_blank' rel='noreferrer' href='https://www.instagram.com/solvexng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' aria-label='Instagram'>
+                  <FaSquareInstagram />
+                </a>
+              </li>
+              <li>
+                <a target='_blank' rel='noreferrer' href='https://www.facebook.com/solvexng/' aria-label='Facebook'>
+                  <IoLogoFacebook />
+                </a>
+              </li>
+              <li>
+                <a target='_blank' rel='noreferrer' href='https://www.pinterest.com/solveXng/' aria-label='Pinterest'>
+                  <FaSquarePinterest />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-        <hr className={style.hr}/>
-        <p className={style.copyright}>Copyright © solveX {new Date().getFullYear()}. All rights reserved</p>
+
+        <div className={style.divider} />
+
+        <p className={style.copyright}>
+          Copyright &copy; solveX {new Date().getFullYear()}. All rights reserved.
+        </p>
       </div>
     </footer>
   )
 }
 
-export default Footer;
+export default Footer

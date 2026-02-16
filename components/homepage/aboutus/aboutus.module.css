@@ -1,210 +1,146 @@
-.container{
-
-}
-.containerInner{
-
-}
-
-.flexbox{
-    @apply bg-[var(--footer-bg)] flex gap-[4rem] px-[5rem] py-[4rem]
-}
-.box1{
-    @apply flex-[50%];
-}
-.box2{
-    @apply flex-[50%] flex flex-col justify-between;
-
-}
-.aboutCard{
-    @apply bg-[var(--white-bg)]  rounded-[35px];
-    padding: 29px 30px 29px 30px;
-}
-.aboutCard:first-of-type{
-    @apply mb-[1.5rem];
+/* ═══════════════════════════════════════════════════════
+   ABOUT — Apple-clean gray, left-right split layout
+═══════════════════════════════════════════════════════ */
+.container {
+  background: #f5f5f7;
+  padding: 7rem 0 8rem;
+  overflow: hidden;
 }
 
-.aboutCard h1{
-    @apply flex capitalize justify-center  items-center gap-[1rem] text-[var(--text-orange)];
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 28px;
-    letter-spacing: 0em;
-    text-align: center;
-    padding-bottom: 1.5rem;
-    
-}
-.aboutCard h1 span{
-    @apply p-3 aspect-square rounded-full bg-[var(--orange-background)] text-[var(--text-white)]
-}
-.aboutText{
-    @apply capitalize;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 28px;
-    letter-spacing: 0em;
-    text-align: center;
-}
-.header, .header2{
-    @apply text-[var(--text-black-9)] ;
-    font-size: 43px;
-    font-weight: 700;
-    line-height: 55px;
-    letter-spacing: 0em;
-    text-align: left;
-}
-.header span, .header2{
-    @apply text-[var(--text-blue)];
-}
-.header2{
-    @apply mb-[2.5rem];
-}
-.btn2{
-    @apply w-fit;
-}
-.content{
-    @apply text-justify text-[var(--text-black-lt)];
-    width: 80%;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 28px;
-    letter-spacing: 0em;
-    /* font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0em; This is the original design from the figma file, which i removed for consistency of fonts in this component
-*/} 
-
-@media screen and (min-width: 1200px) and (max-width: 1350px){
-    .flexbox{
-        @apply px-[2rem];
-   }
-   .header, .header2{
-    @apply text-[35px]
-   }
-   .content{
-        font-size: 18px;
-        width: 100%;
-    }
-    .aboutText{
-        font-size: 15px;
-    }
-}
-@media screen and (max-width: 1200px){
-    .container{
-        @apply p-0;
-    }
-    .containerInner{
-        @apply p-0 m-0;
-        padding: 0rem !important;
-    }
-    .flexbox{
-        @apply flex-col px-[0rem] pt-0 gap-[2rem] bg-[var(--white-bg-main)];
-   }
-   .header, .header2{
-    @apply text-[35px]
-   }
-   .content{
-        font-size: 24px;
-        width: 70%;
-        margin: auto;
-    }
-    .aboutText{
-        font-size: 18px;
-        line-height: 18px;
-    }
-    .box1{
-        order: 2;
-        @apply flex gap-[1rem];
-    }
-    .box2{
-        order: 1;
-        @apply p-0 py-4 bg-[var(--footer-bg)]; 
-    }
-    .box2 *{
-        text-align: center;
-    }
-    .btn2{
-        @apply m-auto mt-[1rem]; 
-    }
-    .aboutCard{
-        @apply rounded-[15px] bg-[var(--footer-bg)];
-        padding: 29px 30px 29px 30px;
-    }
-    .aboutCard:first-of-type{
-        @apply mb-[0rem];
-    }
-    .aboutCard h1{
-        @apply flex flex-col capitalize justify-center items-center gap-[1rem];
-        font-size: 22px;
-        text-align: center;
-        padding-bottom: 1.5rem;
-        
-    }
-    .aboutCard h1 span{
-        @apply p-3 aspect-square rounded-full;
-    }
-    .aboutText{
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 28px;
-        letter-spacing: 0em;
-        text-align: center;
-    }
+/* ── Two-column grid ───────────────────────────────── */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
 }
 
+/* ── Left column ───────────────────────────────────── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 
+.heading {
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1d1d1f;
+  letter-spacing: -0.025em;
+  margin-top: 0.6rem;
+  margin-bottom: 1.6rem;
+}
 
+.headLine {
+  display: block;
+}
 
-@media screen and (max-width: 850px) {
-    .flexbox{
-        @apply px-[1rem];
-   }
-   .header, .header2{
-    @apply text-[22px];
-    line-height: 30px;
-   }
-   .content{
-        font-size: 14px;
-        width: 100%;
-        margin: auto;
-    }
-    .aboutText{
-        font-size: 18px;
-        line-height: 0px;
-    }
-    .box1{
-        order: 2;
-        @apply flex gap-[1rem];
-    }
-    .box2 *{
-        order: 1;
-        text-align: center;
-    }
-    .btn2{
-        @apply m-auto mt-[1rem]; 
-    }
-    .aboutCard{
-        @apply rounded-[15px];
-        padding: 10px 5px 10px 5px;
-    }
-    .aboutCard:first-of-type{
-        @apply mb-[0rem];
-    }
-    .aboutCard h1{
-        @apply flex flex-col capitalize justify-center items-center gap-[0.2rem];
-        font-size: 12px;
-        text-align: center;
-        padding-bottom: 0rem;
-        
-    }
-    .aboutCard h1 span{
-        @apply p-3 aspect-square rounded-full;
-    }
-    .aboutText{
-        font-size: 12px;
-        font-weight: 300;
-        line-height: 20px;
-        letter-spacing: 0em;
-        text-align: center;
-    }
+.orange {
+  color: #FE7131;
+  font-style: italic;
+}
+
+.blue {
+  color: #2B43D5;
+  font-style: italic;
+}
+
+.body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #6e6e73;
+  margin-bottom: 2.2rem;
+  max-width: 460px;
+}
+
+/* ── Right column ──────────────────────────────────── */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ── Capability tile ───────────────────────────────── */
+.capTile {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem 1.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capTile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+}
+
+.capHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.capNum {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #FE7131;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.capIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(254, 113, 49, 0.08);
+  color: #FE7131;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.capTile:hover .capIcon {
+  background: #FE7131;
+  color: #fff;
+}
+
+.capTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 0.5rem;
+}
+
+.capText {
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #6e6e73;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media screen and (max-width: 1000px) {
+  .inner { gap: 3.5rem; }
+}
+
+@media screen and (max-width: 780px) {
+  .container { padding: 5rem 0 6rem; }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .body { max-width: 100%; }
+  .rightCol { flex-direction: row; gap: 1rem; }
+}
+
+@media screen and (max-width: 540px) {
+  .rightCol { flex-direction: column; }
+  .capTile { padding: 1.6rem 1.5rem; }
 }

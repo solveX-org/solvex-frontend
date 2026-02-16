@@ -1,183 +1,287 @@
-.container{
-    @apply py-[4rem]
+/* ═══════════════════════════════════════════════════════
+   PRODUCTS — Apple-clean white, editorial carousel
+═══════════════════════════════════════════════════════ */
+.container {
+  background: #ffffff;
+  padding: 7rem 0 8rem;
+  overflow: hidden;
 }
-.inneContainer{
-    @apply  relative overflow-hidden
+
+/* ── Section header ────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 2rem;
 }
-.productsContainer {
-    @apply flex gap-[2rem] mt-[3rem] overflow-x-scroll pb-2;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    /* Hide scrollbar on Webkit browsers */
-    -webkit-scrollbar-width: none;
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
 }
-.productCard{
-  min-width: 546px !important;
-  height: 470px;
-  padding: 38px 33px 38px 33px;
-  border-radius: 15px;
+
+.heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: #1d1d1f;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  max-width: 480px;
 }
-.image{
-    @apply w-[100%] h-[12rem;]
+
+.accent {
+  color: #FE7131;
 }
-.ComingSoonCard{
-  @apply  bg-[var(--move-background)] flex justify-center items-center;
+
+.errorMsg {
+  color: #6e6e73;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
 }
-.ComingSoonCard h1{
-  @apply uppercase;
-  font-size: 40px;
+
+/* ── Nav arrows ────────────────────────────────────── */
+.navBtns {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  color: #1d1d1f;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.navBtn:hover:not(:disabled) {
+  background: #FE7131;
+  border-color: #FE7131;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(254, 113, 49, 0.3);
+}
+
+.navBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ── Carousel ──────────────────────────────────────── */
+.carouselOuter {
+  width: 100%;
+}
+
+.carouselPadding {
+  /* inherits max-width + horizontal padding from .width */
+}
+
+.track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* ── Dot indicators ────────────────────────────────── */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.dotActive {
+  background: #FE7131;
+  width: 22px;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   PRODUCT CARD — Editorial Image #3 style
+═══════════════════════════════════════════════════════ */
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(110deg, #ffffff 52%, #f5f5f7 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  min-height: 380px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 24px 72px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* ── Left: content ─────────────────────────────────── */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 3rem 3rem 3.5rem;
+  gap: 0;
+}
+
+/* Brand row: small logo + name */
+.cardBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.cardLogoMark {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  overflow: hidden;
+  background: #f5f5f7;
+  flex-shrink: 0;
+}
+
+.logoMarkImg {
+  object-fit: contain;
+}
+
+.cardBrandName {
+  font-size: 0.85rem;
   font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: var(--text-white);
-}
-.ActiveCard{
-  border: 1px solid var(--blue-border);
-}
-.imageCint{
-  @apply rounded-[1rem] overflow-hidden;
-}
-.image{
-  @apply transition duration-500 relative;
-}
-.productCard:hover .image{
-  transform: scale(1.05);
-}
-.productCard:hover .image p{
-    @apply bg-black/10;
-}
-.image p{
-    @apply absolute w-full h-full top-0 transition duration-500 ;
-}
-.botton{
-    @apply transition duration-500;
-    padding: 10px;
-    border-radius: 41px;
-    background-color: var(--light-black-bg);
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text-blue)
-}
-.productCard:hover .botton{
-    background-color: var(--orange-background);
-    color: var(--text-white)
-}
-.name{
-    @apply text-[1.2rem] w-fit mt-[2rem] capitalize;
-}
-.botton1{
-    @apply text-[1.8rem] font-[800];
-}
-.botton1:hover{
-    background-color: var(--light-black-bg) !important;
-    color: var(--text-blue) !important;
-}
-.text{
-    @apply flex items-end justify-between h-[7.5rem];
-}
-.text p{
-    @apply w-[80%] text-justify text-[var(--text-black-lt)];
-    font-size: 1.1rem;
-    font-weight: 400;
-}
-.leftbtn{
- @apply absolute  transition duration-500 -left-6 top-[50%];  
-    padding: 10px;
-    border-radius: 41px;
-    font-size: 30px;
-    font-weight: 500;
-    background-color: var(--orange-background);
-    color: var(--text-white)
-}
-.rightbtn{
-    @apply absolute transition duration-500 bg-red-900 -right-6 top-[50%]; 
-    padding: 10px;
-    border-radius: 41px;
-    font-size: 30px;
-    font-weight: 500;
-    background-color: var(--orange-background);
-    color: var(--text-white)
-}
-.rightbtn:hover, .leftbtn:hover{
-    background-color: var(--light-black-bg);
-    color: var(--text-blue)
-}
-.productsContainer::-webkit-scrollbar {
-    width: 2px; /* Adjust as needed */
-    height: 2px; /* Adjust as needed */
+  color: #6e6e73;
+  letter-spacing: 0.01em;
 }
 
-.productsContainer::-webkit-scrollbar-track {
-background-color: var(--light-black-bg);
+/* Headline */
+.cardHeadline {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: #1d1d1f;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
-.productsContainer::-webkit-scrollbar-thumb {
-background-color: var(--orange-background);
-border-radius: 4px;
+/* Description */
+.cardDesc {
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #6e6e73;
+  margin-bottom: 1.8rem;
+  max-width: 340px;
 }
 
-.productsContainer::-webkit-scrollbar-thumb:hover {
-background: var(--orange-background);
+/* CTA button */
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FE7131;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 980px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 0.25s ease;
 }
-/* //////////////////////////////////////// */
 
-@media screen and (max-width: 550px) {
-    .container{
-        @apply pt-[2rem] pb-[0rem]
-    }
-    .productsContainer {
-        @apply flex gap-[2rem] mt-[1rem];
-    }
-    .productCard{
-      min-width: 273px !important;
-      height: 235px;
-      padding: 11px 10px 11px 10px;
-      border-radius: 10px;
-    }
-    .ComingSoonCard{
-      @apply flex justify-center items-center;
-    }
-    .ComingSoonCard h1{
-      @apply uppercase;
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 28px;
-    }
-    .imageCint{
-      @apply rounded-[0.5rem];
-    }
-    .image{
-        @apply w-[100%] h-[6rem;]
-    }
-    .botton{
-        padding: 4px 10px;
-        border-radius: 41px;
-        font-size: 10px;
-        font-weight: 500;
-    }
-    .name{
-        @apply text-[0.9rem] w-fit mt-[0.2rem] rounded-tl-none;
-    }
-    .botton1{
-        @apply text-[1.8rem] font-[800] p-[4px];
-    }
-    .text{
-        @apply h-[5rem];
-    }
-    .text p{
-        @apply w-[80%] ;
-        font-size: 0.7rem;
-        font-weight: 400;
-    }
-    .leftbtn{
-     @apply -left-6 top-[55%];  
-        font-size: 15px;
-    }
-    .rightbtn{
-        @apply -right-6 top-[55%]; 
-        font-size: 15px;
-       
-    }
-  
+.cardCta:hover {
+  background: #e0601e;
+  box-shadow: 0 6px 20px rgba(254, 113, 49, 0.35);
+  gap: 0.7rem;
+}
+
+.cardCtaArrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.cardCta:hover .cardCtaArrow {
+  transform: translateX(2px);
+}
+
+/* ── Right: visual ─────────────────────────────────── */
+.cardVisual {
+  position: relative;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cardVisualGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(254, 113, 49, 0.1) 0%, transparent 65%),
+              radial-gradient(ellipse at 30% 70%, rgba(43, 67, 213, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cardVisualImg {
+  position: relative;
+  width: 70%;
+  height: 60%;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media screen and (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+  .cardVisual {
+    height: 220px;
+  }
+  .cardContent {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container { padding: 5rem 0 6rem; }
+  .heading { font-size: 1.6rem; }
+  .header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .cardContent { padding: 2rem 1.6rem; }
+  .cardHeadline { font-size: 1.3rem; }
+  .cardVisual { height: 180px; }
 }
