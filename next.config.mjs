@@ -4,7 +4,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "api.solvexng.com",
-        pathname: '**',
+        pathname: '/**',
       },
     ],
   },
