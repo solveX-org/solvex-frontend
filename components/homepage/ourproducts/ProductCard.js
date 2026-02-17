@@ -14,7 +14,8 @@ function ProductCard({ img, alt, name, text, url }) {
           src={img}
           alt={alt}
           style={style.cardVisualImg}
-          imagestyle={style.cardVisualImgInner} />
+          imagestyle={style.cardVisualImgInner}
+          unoptimized={true} />
       </div>
 
       {/* ── Bottom: content ── */}

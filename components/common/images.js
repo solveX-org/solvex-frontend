@@ -1,13 +1,14 @@
 import Image from "next/image"
 
-function ImageCont({src, alt, width, height, style, imagestyle}) {
+function ImageCont({src, alt, width, height, style, imagestyle, unoptimized}) {
   return (
     <div className={`relative object-contain ${style}`} style={{width: width,  height: height}}>
-        <Image 
+        <Image
             fill
             className={imagestyle}
             alt={alt}
-            src={src}/>
+            src={src}
+            unoptimized={unoptimized}/>
     </div>
   )
 }
