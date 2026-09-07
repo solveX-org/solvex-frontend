@@ -29,10 +29,11 @@ function Nav() {
         </Link>
 
         <ul className={style.links}>
-          <li><Link href='#about'>About</Link></li>
-          <li><Link href='#about'>Services</Link></li>
-          <li><Link href='#product'>Products</Link></li>
-          <li><Link href='#contact'>Contact</Link></li>
+          <li><Link href='/#about'>About</Link></li>
+          <li><Link href='/#about'>Services</Link></li>
+          <li><Link href='/#product'>Products</Link></li>
+          <li><Link href='/blog'>Blog</Link></li>
+          <li><Link href='/#contact'>Contact</Link></li>
         </ul>
 
         <Link href='#product' className={style.ctaBtn}>
@@ -60,10 +61,11 @@ function Nav() {
             transition={{ duration: 0.22 }}>
             <ul className={style.mobileLinks}>
               {[
-                { label: 'About', href: '#about' },
-                { label: 'Services', href: '#about' },
-                { label: 'Products', href: '#product' },
-                { label: 'Contact', href: '#contact' },
+                { label: 'About', href: '/#about' },
+                { label: 'Services', href: '/#about' },
+                { label: 'Products', href: '/#product' },
+                { label: 'Blog', href: '/blog' },
+                { label: 'Contact', href: '/#contact' },
               ].map((item, i) => (
                 <motion.li
                   key={item.label}

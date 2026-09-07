@@ -1,0 +1,132 @@
+/* ═══════════════════════════════════════════════════════
+   BLOG LISTING
+═══════════════════════════════════════════════════════ */
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 8rem 0 6rem;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #1d1d1f;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.subheading {
+  font-size: 1rem;
+  color: #6e6e73;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.empty {
+  text-align: center;
+  color: #6e6e73;
+  font-size: 1rem;
+  padding: 4rem 0;
+}
+
+/* ── Blog card ─────────────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-decoration: none;
+  background: #ffffff;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.09);
+  transform: translateY(-3px);
+}
+
+.cardCover {
+  width: 100%;
+  height: 200px;
+  background: #f5f5f7;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .coverImg {
+  transform: scale(1.03);
+}
+
+.coverFallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+    rgba(254, 113, 49, 0.12) 0%,
+    rgba(43, 67, 213, 0.08) 100%);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.8rem 1.8rem;
+  flex: 1;
+}
+
+.meta {
+  font-size: 0.78rem;
+  color: #aeaeb2;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+}
+
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1d1d1f;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+
+.cardExcerpt {
+  font-size: 0.88rem;
+  color: #6e6e73;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1.2rem;
+}
+
+.readMore {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #FE7131;
+  transition: gap 0.2s ease;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media screen and (max-width: 700px) {
+  .page { padding: 6rem 0 4rem; }
+  .grid { grid-template-columns: 1fr; }
+}
