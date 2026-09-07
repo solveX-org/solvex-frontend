@@ -1,12 +1,14 @@
 'use client'
 import ProductCard from './ProductCard'
 import style from './products.module.css'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md'
 import axios from 'axios'
 
 const apiLink = 'https://api.solvexng.com/api/v1/products/'
+const AUTO_SPEED = 1  // px per tick
+const TICK_MS = 16    // ~60fps
 
 function OurProducts() {
   const sectionRef = useRef(null)
@@ -16,6 +18,8 @@ function OurProducts() {
   const [errorMessage, setErrorMessage] = useState(null)
   const [canPrev, setCanPrev] = useState(false)
   const [canNext, setCanNext] = useState(false)
+  const pausedRef = useRef(false)
+  const rafRef = useRef(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,12 +33,37 @@ function OurProducts() {
     fetchData()
   }, [])
 
-  const updateArrows = () => {
+  const updateArrows = useCallback(() => {
     const el = trackRef.current
     if (!el) return
     setCanPrev(el.scrollLeft > 8)
     setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 8)
-  }
+  }, [])
+
+  // Auto-scroll loop
+  useEffect(() => {
+    if (productData.length === 0) return
+    let last = performance.now()
+
+    const tick = (now) => {
+      const el = trackRef.current
+      if (el && !pausedRef.current) {
+        const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4
+        if (atEnd) {
+          el.scrollLeft = 0
+        } else {
+          const delta = ((now - last) / TICK_MS) * AUTO_SPEED
+          el.scrollLeft += delta
+        }
+        updateArrows()
+      }
+      last = now
+      rafRef.current = requestAnimationFrame(tick)
+    }
+
+    rafRef.current = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafRef.current)
+  }, [productData, updateArrows])
 
   useEffect(() => {
     const el = trackRef.current
@@ -46,12 +75,17 @@ function OurProducts() {
       el.removeEventListener('scroll', updateArrows)
       window.removeEventListener('resize', updateArrows)
     }
-  }, [productData])
+  }, [productData, updateArrows])
+
+  const pause = () => { pausedRef.current = true }
+  const resume = () => { pausedRef.current = false }
 
   const scroll = (dir) => {
     const el = trackRef.current
     if (!el) return
+    pause()
     el.scrollBy({ left: dir * 220, behavior: 'smooth' })
+    setTimeout(resume, 2000)
   }
 
   return (
@@ -80,8 +114,11 @@ function OurProducts() {
       )}
 
       {productData.length > 0 && (
-        <div className={style.carouselWrapper}>
-          {/* Left arrow */}
+        <div
+          className={style.carouselWrapper}
+          onMouseEnter={pause}
+          onMouseLeave={resume}>
+
           <button
             className={`${style.arrow} ${style.arrowLeft} ${!canPrev ? style.arrowHidden : ''}`}
             onClick={() => scroll(-1)}
@@ -89,7 +126,6 @@ function OurProducts() {
             <MdArrowBackIosNew />
           </button>
 
-          {/* Scrollable track */}
           <div className={style.track} ref={trackRef}>
             {productData.map((data, index) => (
               <motion.div
@@ -107,7 +143,6 @@ function OurProducts() {
             ))}
           </div>
 
-          {/* Right arrow */}
           <button
             className={`${style.arrow} ${style.arrowRight} ${!canNext ? style.arrowHidden : ''}`}
             onClick={() => scroll(1)}
