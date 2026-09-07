@@ -89,10 +89,6 @@
   box-shadow: 0 4px 16px rgba(254, 113, 49, 0.3);
 }
 
-.arrowHidden {
-  opacity: 0;
-  pointer-events: none;
-}
 
 /* ── Product card (circular logo + name) ───────────── */
 .card {
