@@ -1,24 +1,18 @@
 /* ═══════════════════════════════════════════════════════
-   PRODUCTS — Apple-clean white, editorial carousel
+   PRODUCTS
 ═══════════════════════════════════════════════════════ */
 .container {
   background: #ffffff;
   padding: 7rem 0 8rem;
-  overflow: hidden;
 }
 
 /* ── Section header ────────────────────────────────── */
 .header {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 3rem;
-  gap: 2rem;
-}
-
-.headerLeft {
-  display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .heading {
@@ -27,7 +21,6 @@
   color: #1d1d1f;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  max-width: 480px;
 }
 
 .accent {
@@ -37,228 +30,70 @@
 .errorMsg {
   color: #6e6e73;
   font-size: 0.9rem;
-  margin-bottom: 2rem;
+  text-align: center;
 }
 
-/* ── Nav arrows ────────────────────────────────────── */
-.navBtns {
+/* ── Product grid ──────────────────────────────────── */
+.grid {
   display: flex;
-  gap: 0.6rem;
-  flex-shrink: 0;
-}
-
-.navBtn {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: #ffffff;
-  color: #1d1d1f;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.22s ease;
+  gap: 3rem 4rem;
 }
 
-.navBtn:hover:not(:disabled) {
-  background: #FE7131;
-  border-color: #FE7131;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(254, 113, 49, 0.3);
-}
-
-.navBtn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-/* ── Carousel ──────────────────────────────────────── */
-.carouselOuter {
-  width: 100%;
-}
-
-.track {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 0.5rem;
-}
-
-.track::-webkit-scrollbar {
-  display: none;
-}
-
-.slide {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  /* Show 2 cards at a time on desktop */
-  width: calc(50% - 0.75rem);
-}
-
-/* ── Dot indicators ────────────────────────────────── */
-.dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.15);
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  padding: 0;
-}
-
-.dotActive {
-  background: #FE7131;
-  width: 22px;
-  border-radius: 4px;
-}
-
-/* ═══════════════════════════════════════════════════════
-   PRODUCT CARD — Vertical: image top, content bottom
-═══════════════════════════════════════════════════════ */
+/* ── Product card (circular logo + name) ───────────── */
 .card {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  border-radius: 20px;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logoCircle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.09);
-  transform: translateY(-3px);
-}
-
-/* ── Top: image area ───────────────────────────────── */
-.cardVisual {
-  position: relative;
-  width: 100%;
-  height: 240px;
-  background: #f5f5f7;
-  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   flex-shrink: 0;
 }
 
-.cardVisualGlow {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 60% 40%, rgba(254, 113, 49, 0.08) 0%, transparent 65%),
-              radial-gradient(ellipse at 30% 70%, rgba(43, 67, 213, 0.06) 0%, transparent 65%);
-  pointer-events: none;
+.card:hover .logoCircle {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(254, 113, 49, 0.2);
 }
 
-/* Fade bottom of image area into white content area */
-.cardVisual::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 48px;
-  background: linear-gradient(to bottom, transparent, #ffffff);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.cardVisualImg {
-  position: relative;
+.logoImg {
   width: 100%;
   height: 100%;
-  z-index: 1;
 }
 
-.cardVisualImgInner {
+.logoImgInner {
   object-fit: cover;
-  object-position: top center;
 }
 
-/* ── Bottom: content ───────────────────────────────── */
-.cardContent {
-  display: flex;
-  flex-direction: column;
-  padding: 1.8rem 2rem 2rem;
-  flex: 1;
-}
-
-.cardHeadline {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1d1d1f;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 0.7rem;
-}
-
-.cardDesc {
-  font-size: 0.9rem;
-  font-weight: 400;
-  line-height: 1.65;
-  color: #6e6e73;
-  flex: 1;
-  margin-bottom: 1.4rem;
-}
-
-/* CTA pill button */
-.cardCta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #FE7131;
-  border: 1.5px solid rgba(254, 113, 49, 0.4);
-  background: transparent;
-  padding: 0.55rem 1.2rem;
-  border-radius: 980px;
-  font-size: 0.85rem;
+.cardName {
+  font-size: 0.95rem;
   font-weight: 600;
-  text-decoration: none;
-  width: fit-content;
-  transition: all 0.25s ease;
+  color: #1d1d1f;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
 }
 
-.cardCta:hover {
-  background: #FE7131;
-  border-color: #FE7131;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(254, 113, 49, 0.25);
-  gap: 0.7rem;
-}
-
-.cardCtaArrow {
-  font-size: 0.72rem;
-  transition: transform 0.2s ease;
-}
-
-.cardCta:hover .cardCtaArrow {
-  transform: translateX(2px);
+.card:hover .cardName {
+  color: #FE7131;
 }
 
 /* ═══════════════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════════════ */
-@media screen and (max-width: 900px) {
-  /* Show ~1.1 cards to hint at scrollability */
-  .slide { width: calc(80% - 0.75rem); }
-}
-
 @media screen and (max-width: 700px) {
   .container { padding: 5rem 0 6rem; }
   .heading { font-size: 1.6rem; }
-  .header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .slide { width: calc(85% - 0.75rem); }
-  .cardVisual { height: 200px; }
-  .cardContent { padding: 1.4rem 1.5rem 1.6rem; }
+  .grid { gap: 2.5rem 3rem; }
+  .logoCircle { width: 96px; height: 96px; }
 }
