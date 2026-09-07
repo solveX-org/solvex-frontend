@@ -24,9 +24,7 @@
   line-height: 1.15;
 }
 
-.accent {
-  color: #FE7131;
-}
+.accent { color: #FE7131; }
 
 .errorMsg {
   color: #6e6e73;
@@ -34,61 +32,30 @@
   text-align: center;
 }
 
-/* ── Carousel wrapper ──────────────────────────────── */
-.carouselWrapper {
-  position: relative;
+/* ── Marquee ───────────────────────────────────────── */
+.marqueeOuter {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marqueeTrack {
   display: flex;
-  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  padding: 1rem 0 1.5rem;
+  animation: marquee 22s linear infinite;
 }
 
-/* ── Scrollable track ──────────────────────────────── */
-.track {
-  display: flex;
-  gap: 3rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  padding: 1rem 5rem;
-  flex: 1;
+.marqueeTrack:hover {
+  animation-play-state: paused;
 }
 
-.track::-webkit-scrollbar { display: none; }
-
-.slide {
-  scroll-snap-align: center;
-  flex-shrink: 0;
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-/* ── Arrow buttons ─────────────────────────────────── */
-.arrow {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: #ffffff;
-  color: #1d1d1f;
-  font-size: 0.85rem;
-  cursor: pointer;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.22s ease;
-}
-
-.arrowLeft  { left: 0; }
-.arrowRight { right: 0; }
-
-.arrow:hover {
-  background: #FE7131;
-  border-color: #FE7131;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(254, 113, 49, 0.3);
-}
-
+.slide { flex-shrink: 0; }
 
 /* ── Product card (circular logo + name) ───────────── */
 .card {
@@ -123,9 +90,7 @@
   padding: 16px;
 }
 
-.logoImgInner {
-  object-fit: contain;
-}
+.logoImgInner { object-fit: contain; }
 
 .cardName {
   font-size: 0.95rem;
@@ -135,9 +100,7 @@
   transition: color 0.2s ease;
 }
 
-.card:hover .cardName {
-  color: #FE7131;
-}
+.card:hover .cardName { color: #FE7131; }
 
 /* ═══════════════════════════════════════════════════════
    RESPONSIVE
@@ -145,7 +108,6 @@
 @media screen and (max-width: 700px) {
   .container { padding: 5rem 0 6rem; }
   .heading { font-size: 1.6rem; }
-  .track { gap: 2rem; padding: 1rem 3rem; }
+  .marqueeTrack { gap: 2.5rem; }
   .logoCircle { width: 110px; height: 110px; }
-  .arrow { width: 32px; height: 32px; font-size: 0.75rem; }
 }

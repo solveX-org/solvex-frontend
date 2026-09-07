@@ -11,11 +11,16 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true)
 
   const fetchPosts = async () => {
-    const res = await apiFetch('/blog/manage/')
-    if (!res) return
-    const data = await res.json()
-    setPosts(data)
-    setLoading(false)
+    try {
+      const res = await apiFetch('/blog/manage/')
+      if (!res || !res.ok) { setLoading(false); return }
+      const data = await res.json()
+      setPosts(Array.isArray(data) ? data : [])
+    } catch {
+      setPosts([])
+    } finally {
+      setLoading(false)
+    }
   }
 
   useEffect(() => { fetchPosts() }, [])
