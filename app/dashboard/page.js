@@ -1,12 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { apiFetch, clearToken } from '@/utils/auth'
+import { apiFetch } from '@/utils/auth'
+import Sidebar from '@/components/dashboard/Sidebar'
 import style from '@/components/dashboard/dashboard.module.css'
 
 export default function DashboardPage() {
-  const router = useRouter()
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -41,21 +40,9 @@ export default function DashboardPage() {
     if (res?.ok) fetchPosts()
   }
 
-  const handleLogout = () => {
-    clearToken()
-    router.push('/dashboard/login')
-  }
-
   return (
     <div className={style.page}>
-      {/* Sidebar */}
-      <aside className={style.sidebar}>
-        <div className={style.sidebarLogo}>Solve<span>X</span></div>
-        <nav className={style.sidebarNav}>
-          <span className={style.navItem + ' ' + style.navActive}>Blog Posts</span>
-        </nav>
-        <button className={style.logoutBtn} onClick={handleLogout}>Log out</button>
-      </aside>
+      <Sidebar />
 
       {/* Main */}
       <main className={style.main}>

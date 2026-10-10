@@ -2,7 +2,8 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { apiFetch, clearToken } from '@/utils/auth'
+import { apiFetch } from '@/utils/auth'
+import Sidebar from '@/components/dashboard/Sidebar'
 import PostForm from '@/components/dashboard/PostForm'
 import style from '@/components/dashboard/dashboard.module.css'
 
@@ -27,17 +28,9 @@ export default function NewPostPage() {
     }
   }
 
-  const handleLogout = () => { clearToken(); router.push('/dashboard/login') }
-
   return (
     <div className={style.page}>
-      <aside className={style.sidebar}>
-        <div className={style.sidebarLogo}>Solve<span>X</span></div>
-        <nav className={style.sidebarNav}>
-          <Link href='/dashboard' className={style.navItem}>Blog Posts</Link>
-        </nav>
-        <button className={style.logoutBtn} onClick={handleLogout}>Log out</button>
-      </aside>
+      <Sidebar />
 
       <main className={style.main}>
         <div className={style.topBar}>
