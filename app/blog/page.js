@@ -2,8 +2,9 @@ import Nav from '@/components/common/nav/nav'
 import Footer from '@/components/common/footer/index'
 import BlogCard from '@/components/blog/BlogCard'
 import style from '@/components/blog/blog.module.css'
+import { API } from '@/utils/api'
 
-const apiLink = 'https://api.solvexng.com/api/v1/blog/'
+const apiLink = `${API}/blog/`
 
 async function getPosts() {
   try {

@@ -2,8 +2,9 @@ import Nav from '@/components/common/nav/nav'
 import Footer from '@/components/common/footer/index'
 import Link from 'next/link'
 import style from '@/components/blog/post.module.css'
+import { API } from '@/utils/api'
 
-const apiBase = 'https://api.solvexng.com/api/v1/blog'
+const apiBase = `${API}/blog`
 
 async function getPost(slug) {
   try {

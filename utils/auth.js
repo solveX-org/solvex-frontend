@@ -1,5 +1,5 @@
 const TOKEN_KEY = 'solvex_dashboard_token'
-const API = 'https://api.solvexng.com/api/v1'
+import { API } from './api'
 
 export const getToken = () => {
   if (typeof window === 'undefined') return null

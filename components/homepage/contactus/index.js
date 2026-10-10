@@ -5,8 +5,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import axios from 'axios'
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { API } from '@/utils/api'
 
-const apiroute = 'https://api.solvexng.com/api/v1/contact-us/'
+const apiroute = `${API}/contact-us/`
 
 function Reveal({ children, delay = 0, className }) {
   const ref = useRef(null)

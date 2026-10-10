@@ -4,8 +4,9 @@ import style from './products.module.css'
 import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import axios from 'axios'
+import { API } from '@/utils/api'
 
-const apiLink = 'https://api.solvexng.com/api/v1/products/'
+const apiLink = `${API}/products/`
 
 function OurProducts() {
   const sectionRef = useRef(null)
