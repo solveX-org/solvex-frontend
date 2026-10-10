@@ -22,6 +22,14 @@ export default function ApplicationPage() {
   const [moveNote, setMoveNote] = useState('')
   const [note, setNote] = useState('')
   const [busy, setBusy] = useState(false)
+  const [notify, setNotify] = useState(false)
+  const [emailSubject, setEmailSubject] = useState('')
+  const [emailBody, setEmailBody] = useState('')
+  const [allowAttachment, setAllowAttachment] = useState(false)
+  const [attachment, setAttachment] = useState(null)
+  const [moveError, setMoveError] = useState(null)
+  const [moveResult, setMoveResult] = useState(null)
+  const [hasTemplate, setHasTemplate] = useState(false)
 
   const load = async () => {
     const res = await apiFetch(`/careers/applications/${id}/`)
@@ -36,16 +44,75 @@ export default function ApplicationPage() {
     apiFetch('/careers/stages/').then(r => r?.json()).then(s => setStages(s || []))
   }, [id])
 
+  // Load the stage's email template whenever a different stage is picked.
+  useEffect(() => {
+    setAttachment(null)
+    setMoveError(null)
+    if (!app || !stageId || Number(stageId) === app.stage) {
+      setNotify(false)
+      return
+    }
+    apiFetch(`/careers/applications/${id}/email-preview/?stage=${stageId}`)
+      .then(r => r?.json())
+      .then(p => {
+        if (!p) return
+        setEmailSubject(p.subject)
+        setEmailBody(p.body)
+        setAllowAttachment(p.allow_attachment)
+        setNotify(p.has_template && p.notify_by_default)
+        setHasTemplate(p.has_template)
+      })
+  }, [stageId, app?.stage])
+
   const moveStage = async (e) => {
     e.preventDefault()
     setBusy(true)
-    const res = await apiFetch(`/careers/applications/${id}/`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ stage: Number(stageId), note: moveNote }),
-    })
+    setMoveError(null)
+    setMoveResult(null)
+    const data = new FormData()
+    data.append('stage', stageId)
+    data.append('note', moveNote)
+    if (notify) {
+      data.append('notify', 'true')
+      data.append('email_subject', emailSubject)
+      data.append('email_body', emailBody)
+      if (attachment) data.append('attachment', attachment)
+    }
+    const res = await apiFetch(`/careers/applications/${id}/`, { method: 'PATCH', body: data })
     setBusy(false)
-    if (res?.ok) { setMoveNote(''); load() }
+    const body = await res?.json().catch(() => null)
+    if (res?.ok) {
+      setMoveNote('')
+      setMoveResult(body?.email_status)
+      load()
+    } else {
+      const first = body ? Object.values(body).flat()[0] : null
+      setMoveError(typeof first === 'string' ? first : `Could not move (HTTP ${res?.status}).`)
+    }
+  }
+
+  const moved = app && Number(stageId) !== app.stage
+
+  const onAttach = (e) => {
+    const f = e.target.files[0]
+    if (f && f.size > 5 * 1024 * 1024) {
+      setMoveError('Attachment must be 5MB or smaller.')
+      e.target.value = ''
+      return setAttachment(null)
+    }
+    setMoveError(null)
+    setAttachment(f || null)
+  }
+
+  const downloadAttachment = async (ev) => {
+    const res = await apiFetch(`/careers/applications/${id}/events/${ev.id}/attachment/`)
+    if (!res?.ok) return alert('Could not download attachment.')
+    const url = URL.createObjectURL(await res.blob())
+    const a = document.createElement('a')
+    a.href = url
+    a.download = ev.attachment_name || 'attachment'
+    a.click()
+    URL.revokeObjectURL(url)
   }
 
   const addNote = async (e) => {
@@ -128,6 +195,16 @@ export default function ApplicationPage() {
                         {formatDateTime(ev.created_at)}{ev.author_name ? ` · ${ev.author_name}` : ''}
                       </div>
                       {ev.note && <div className={pipe.eventNote}>{ev.note}</div>}
+                      {ev.email_status && (
+                        <div className={pipe.eventNote}>
+                          {ev.email_status === 'sent' ? '✉ Emailed candidate: ' : '⚠ Email failed: '}
+                          {ev.email_subject}
+                          {ev.has_attachment && (
+                            <> · <button type='button' className={pipe.inlineLink}
+                              onClick={() => downloadAttachment(ev)}>{ev.attachment_name}</button></>
+                          )}
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -143,11 +220,49 @@ export default function ApplicationPage() {
                   </select>
                 </div>
                 <div className={style.field}>
-                  <textarea className={style.textarea} rows={3} value={moveNote}
-                    onChange={e => setMoveNote(e.target.value)} placeholder='Optional note for this move' />
+                  <textarea className={style.textarea} rows={2} value={moveNote}
+                    onChange={e => setMoveNote(e.target.value)} placeholder='Optional internal note' />
                 </div>
-                <button type='submit' className={style.submitBtn}
-                  disabled={busy || Number(stageId) === app.stage}>Move</button>
+
+                {moved && hasTemplate && (
+                  <>
+                    <label className={pipe.checkRow}>
+                      <input type='checkbox' checked={notify} onChange={e => setNotify(e.target.checked)} />
+                      Email the candidate
+                    </label>
+                    {notify && (
+                      <>
+                        <div className={style.field}>
+                          <label className={style.label}>Subject</label>
+                          <input className={style.input} value={emailSubject}
+                            onChange={e => setEmailSubject(e.target.value)} />
+                        </div>
+                        <div className={style.field}>
+                          <label className={style.label}>Message</label>
+                          <textarea className={`${style.textarea} ${pipe.emailBody}`} rows={12} value={emailBody}
+                            onChange={e => setEmailBody(e.target.value)} />
+                          {/\[\[.*?\]\]/.test(emailBody + emailSubject) && (
+                            <span className={pipe.warn}>Replace the [[bracketed]] parts before sending.</span>
+                          )}
+                        </div>
+                        {allowAttachment && (
+                          <div className={style.field}>
+                            <label className={style.label}>Attachment (e.g. offer letter)</label>
+                            <input type='file' accept='.pdf,.doc,.docx' className={style.fileInput} onChange={onAttach} />
+                            <span className={pipe.hint}>PDF, DOC or DOCX, up to 5MB</span>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </>
+                )}
+
+                {moveError && <p className={style.formError}>{moveError}</p>}
+                {moveResult === 'sent' && <p className={pipe.ok}>Moved and email sent.</p>}
+                {moveResult === 'failed' && <p className={style.formError}>Moved, but the email failed to send.</p>}
+                <button type='submit' className={style.submitBtn} disabled={busy || !moved}>
+                  {busy ? 'Saving…' : notify ? 'Move & send email' : 'Move'}
+                </button>
               </form>
 
               <form className={pipe.panel} onSubmit={addNote}>
