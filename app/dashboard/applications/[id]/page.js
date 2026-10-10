@@ -4,6 +4,7 @@ import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { apiFetch } from '@/utils/auth'
 import Sidebar from '@/components/dashboard/Sidebar'
+import InterviewPanel from '@/components/dashboard/InterviewPanel'
 import style from '@/components/dashboard/dashboard.module.css'
 import pipe from '@/components/dashboard/pipeline.module.css'
 
@@ -180,6 +181,8 @@ export default function ApplicationPage() {
                   <p className={pipe.letter}>{app.cover_letter}</p>
                 </div>
               )}
+
+              <InterviewPanel applicationId={id} onChange={load} />
 
               <div className={pipe.panel}>
                 <h3 className={pipe.panelTitle}>Activity</h3>

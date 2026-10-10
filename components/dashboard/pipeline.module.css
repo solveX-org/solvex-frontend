@@ -54,3 +54,16 @@
 .hint { font-size: 0.75rem; color: #98989d; }
 .ok { color: #1a8f4c; font-size: 0.85rem; margin: 0 0 0.8rem; }
 .inlineLink { background: none; border: none; padding: 0; color: #2B43D5; text-decoration: underline; cursor: pointer; font: inherit; }
+
+.panelHead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem; }
+.interviewForm { border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 1rem; margin-bottom: 1rem; background: #fafafa; }
+.formRow { display: flex; gap: 0.8rem; align-items: flex-end; }
+.formRow > * { flex: 1; min-width: 0; }
+.ghostBtn { background: none; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; padding: 0.6rem 1rem; cursor: pointer; font-family: inherit; flex: 0 0 auto; }
+.muted { opacity: 0.6; border-left-color: #c7c7cc; }
+.pill { margin-left: 0.5rem; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.12rem 0.5rem; border-radius: 99px; background: #eee; color: #555; }
+.pill_scheduled { background: #fff1ea; color: #FE7131; }
+.pill_completed { background: #e6f6ec; color: #1a8f4c; }
+.pill_cancelled { background: #fdeaea; color: #c0392b; }
+.rowActions { display: flex; gap: 1rem; margin-top: 0.4rem; }
+@media (max-width: 600px) { .formRow { flex-direction: column; align-items: stretch; } }
