@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { apiFetch } from '@/utils/auth'
 import Sidebar from '@/components/dashboard/Sidebar'
 import InterviewPanel from '@/components/dashboard/InterviewPanel'
+import OfferPanel from '@/components/dashboard/OfferPanel'
 import style from '@/components/dashboard/dashboard.module.css'
 import pipe from '@/components/dashboard/pipeline.module.css'
 
@@ -31,6 +32,8 @@ export default function ApplicationPage() {
   const [moveError, setMoveError] = useState(null)
   const [moveResult, setMoveResult] = useState(null)
   const [hasTemplate, setHasTemplate] = useState(false)
+  const [offers, setOffers] = useState([])
+  const [offerChoice, setOfferChoice] = useState('') // '' = none/upload, else offer id
 
   const load = async () => {
     const res = await apiFetch(`/careers/applications/${id}/`)
@@ -40,8 +43,14 @@ export default function ApplicationPage() {
     setStageId(String(data.stage))
   }
 
+  const loadOffers = async () => {
+    const res = await apiFetch(`/careers/applications/${id}/offers/`)
+    if (res?.ok) setOffers(await res.json())
+  }
+
   useEffect(() => {
     load()
+    loadOffers()
     apiFetch('/careers/stages/').then(r => r?.json()).then(s => setStages(s || []))
   }, [id])
 
@@ -60,6 +69,7 @@ export default function ApplicationPage() {
         setEmailSubject(p.subject)
         setEmailBody(p.body)
         setAllowAttachment(p.allow_attachment)
+        setOfferChoice('')
         setNotify(p.has_template && p.notify_by_default)
         setHasTemplate(p.has_template)
       })
@@ -77,7 +87,8 @@ export default function ApplicationPage() {
       data.append('notify', 'true')
       data.append('email_subject', emailSubject)
       data.append('email_body', emailBody)
-      if (attachment) data.append('attachment', attachment)
+      if (offerChoice) data.append('offer_id', offerChoice)
+      else if (attachment) data.append('attachment', attachment)
     }
     const res = await apiFetch(`/careers/applications/${id}/`, { method: 'PATCH', body: data })
     setBusy(false)
@@ -86,6 +97,7 @@ export default function ApplicationPage() {
       setMoveNote('')
       setMoveResult(body?.email_status)
       load()
+      loadOffers()
     } else {
       const first = body ? Object.values(body).flat()[0] : null
       setMoveError(typeof first === 'string' ? first : `Could not move (HTTP ${res?.status}).`)
@@ -184,6 +196,8 @@ export default function ApplicationPage() {
 
               <InterviewPanel applicationId={id} onChange={load} />
 
+              <OfferPanel applicationId={id} offers={offers} reload={() => { loadOffers(); load() }} />
+
               <div className={pipe.panel}>
                 <h3 className={pipe.panelTitle}>Activity</h3>
                 <ul className={pipe.timeline}>
@@ -250,9 +264,24 @@ export default function ApplicationPage() {
                         </div>
                         {allowAttachment && (
                           <div className={style.field}>
-                            <label className={style.label}>Attachment (e.g. offer letter)</label>
-                            <input type='file' accept='.pdf,.doc,.docx' className={style.fileInput} onChange={onAttach} />
-                            <span className={pipe.hint}>PDF, DOC or DOCX, up to 5MB</span>
+                            <label className={style.label}>Attachment</label>
+                            {offers.length > 0 && (
+                              <select className={style.input} value={offerChoice}
+                                onChange={e => { setOfferChoice(e.target.value); setAttachment(null) }}>
+                                <option value=''>Upload a file instead / none</option>
+                                {offers.map(o => (
+                                  <option key={o.id} value={o.id}>
+                                    Generated offer letter — {o.salary}{o.sent_at ? ' (already sent)' : ''}
+                                  </option>
+                                ))}
+                              </select>
+                            )}
+                            {!offerChoice && (
+                              <>
+                                <input type='file' accept='.pdf,.doc,.docx' className={style.fileInput} onChange={onAttach} />
+                                <span className={pipe.hint}>PDF, DOC or DOCX, up to 5MB</span>
+                              </>
+                            )}
                           </div>
                         )}
                       </>
