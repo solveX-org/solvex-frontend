@@ -6,6 +6,7 @@ import style from './dashboard.module.css'
 
 const LINKS = [
   { label: 'Blog Posts', href: '/dashboard', match: p => p === '/dashboard' || p.startsWith('/dashboard/posts') },
+  { label: 'Jobs', href: '/dashboard/jobs', match: p => p.startsWith('/dashboard/jobs') },
 ]
 
 export default function Sidebar() {
