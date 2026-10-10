@@ -33,6 +33,7 @@ function Nav() {
           <li><Link href='/#about'>Services</Link></li>
           <li><Link href='/#product'>Products</Link></li>
           <li><Link href='/blog'>Blog</Link></li>
+          <li><Link href='/careers'>Careers</Link></li>
           <li><Link href='/#contact'>Contact</Link></li>
         </ul>
 
@@ -65,6 +66,7 @@ function Nav() {
                 { label: 'Services', href: '/#about' },
                 { label: 'Products', href: '/#product' },
                 { label: 'Blog', href: '/blog' },
+                { label: 'Careers', href: '/careers' },
                 { label: 'Contact', href: '/#contact' },
               ].map((item, i) => (
                 <motion.li
